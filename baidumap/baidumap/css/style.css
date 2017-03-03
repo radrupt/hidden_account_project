@@ -1,0 +1,242 @@
+.infoboxcss1{
+    background-color: white;
+    height: 100px;
+    position: relative;
+    width: 250px;
+    border:2.75px solid #ff7c2a;
+    margin-bottom: 25px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.infoboxcss1:after,.infoboxcss1:before{
+    content:'';
+    position:absolute;
+}
+.infoboxcss1:after{
+
+    border:10px  solid transparent;
+    border-top-color:white;
+    top:100px;
+    left:115px;
+}
+.infoboxcss1:before{
+
+    border:15px solid transparent;
+    border-top-color: #ff7c2a;
+    top:100px;
+    left:110px;
+}
+
+.infoboxcss2{
+    background-color: white;
+    height: 100px;
+    position: relative;
+    width: 250px;
+    border:2.75px solid #ff7c2a;
+    margin-bottom: 25px;
+}
+.infoboxcss2:after,.infoboxcss2:before{
+    content:'';
+    position:absolute;
+}
+.infoboxcss2:after{
+
+    border:10px  solid transparent;
+    border-right-color:white;
+    top:42px;
+    left:-20px;
+}
+.infoboxcss2:before{
+
+    border:15px solid transparent;
+    border-right-color: #ff7c2a;
+    top:37px;
+    left:-30px;
+}
+
+.infoboxcss3{
+    background-color: white;
+    height: 150px;
+    width: 250px;
+    border:2.75px solid #ff7c2a;
+    margin-bottom: 25px;
+    opacity:0.8;
+    padding: 10px;
+}
+
+.io_main{
+    height :1040px;
+    width : 300px;
+    background: rgba(131,124,123,0.8);
+    transition: 1s;
+    position: relative;
+}
+
+.taborder{
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px #1c94c4 solid;
+    overflow:hidden;
+    transition: height 1s, width 1s;
+    position: relative;
+}
+.tabtruck{
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px #FF7C2A solid;
+    overflow:hidden;
+    transition: height 1s, width 1s;
+    position: relative;
+}
+
+
+.orderimg{
+    display: none;
+    height: 25px;
+    top: 20px;
+    left: 50px;
+    position: absolute;
+}
+
+.truckimg{
+    display: none;
+    height: 25px;
+    top: 20px;
+    right: 50px;
+    position: absolute;
+}
+
+.active{
+    display: inline;
+}
+.active:before{
+    content:'';
+    position:absolute;
+}
+
+.orderimg.a:before{
+
+    border:10px solid transparent;
+    border-bottom-color: #1c94c4;
+    top:40px;
+    left:10px;
+}
+
+.truckimg.a:before{
+
+    border:10px solid transparent;
+    border-bottom-color: #FF7C2A;
+    top:40px;
+    right:10px;
+}
+
+.content{
+    height : 930px;
+    width  : 300px;
+    display: block;
+    transition: 1s;
+    overflow:hidden;
+    color: white;
+}
+
+.solidunflod{
+    position: absolute;
+    top: 300px;
+    right: 0px;
+}
+
+.left{
+    float: left;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.l_title{
+    display: block;
+    padding: 20px 20px 20px 55px;
+    color:#fff;
+    font-size: 14px;
+    font-weight:bolder;
+    text-align: left;
+}
+
+.carlink{
+    cursor: pointer;
+}
+
+.r_driver{
+    display: block;
+    width: 100%;
+    color: #fff;
+    line-height: 65px;
+    font-weight: normal;
+    height: 65px;
+    background: rgba(255,255,255,0.1);
+    text-align: left;
+}
+
+.orderlist{
+    width : 100%;
+    height :60px;
+    background: rgba(83,74,72,0.8);
+}
+
+.ordertitle{
+    width:300px;
+    height: 60px;
+    position: relative;
+}
+
+.listtitleimg{
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    width: 25px;
+    height: 15px;
+}
+
+.shiplist{
+    font-family: "opensans","DR","Microsoft YaHei UI","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
+    display: block;
+    color: #fff;
+    font-weight: lighter;
+    text-align: left;
+    padding-left: 45px;
+    background: rgba(255,255,255,0.2);
+
+    font-size: 12px;
+}
+
+.shiplist.dark{
+    font-size: 16px;
+    background:none !important;
+}
+
+.header{
+    position: absolute;
+    top: 142px;
+    width:100%;
+    height: 30px;
+    background: rgba(1,1,1,0.2);;
+    z-index:99;
+    transition: 1s;
+}
+.footer{
+    position: absolute;
+    top: 40px;
+    width:100%;
+    height: 30px;
+    background: rgba(1,1,1,0.2);;
+    z-index:99;
+    transition: 1s;
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Node Authentication</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        body 		{ padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span>注册</h1>
+
+        <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <!-- LOGIN FORM -->
+        <form action="/signup" method="post">
+            <div class="form-group">
+                <label>邮箱</label>
+                <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-lg">注册</button>
+        </form>
+
+        <hr>
+
+        <p>已经有一个账号了? <a href="/login">登录</a></p>
+
+        <div class="text-center">
+            <!--<p>A demo by <a href="http://scotch.io">Scotch</a>.</p>-->
+            <!--<p>Visit the <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">tutorial</a>.</p>-->
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

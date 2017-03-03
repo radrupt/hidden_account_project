@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .io_main{
+            width : 300px;
+            height :1040px;
+            background: rgba(0,0,0,0.8);
+        }
+        .list{
+            width : 300px;
+            height :100px;
+            background: gold;
+
+        }
+        #list2{
+            background: green;
+        }
+        #list3{
+            background: blue;
+        }
+        .title{
+            width:300px;
+            height: 100px;
+
+        }
+    </style>
+
+</head>
+<body >
+<div class="io_main">
+    <div class="list" id="list1">
+        <div class="title" id="titlelist0"></div>
+    </div>
+    <div class="list" id="list2">
+        <div class="title" id="titlelist1"></div>
+    </div>
+
+    <div class="list" id="list3">
+        <div class="title" id="titlelist2"></div>
+    </div>
+    <div class="list" id="list4">
+        <div class="title" id="titlelist3"></div>
+    </div>
+</div>
+<script>
+    var lists = new Array("list1","list2", "list3", "list4");
+
+    init(lkGetElementById(lists));
+
+    //get dom
+    function lkGetElementById(lists){
+        var elementlists = new Array();
+        for( var i = 0; i < lists.length; i++ ){
+            elementlists[i] = document.getElementById(lists[i]);
+        }
+        return elementlists;
+    }
+
+    //lists: doms
+    function init(lists){
+        var currentunfold = null;
+        for( var i = 0; i < lists.length; i++ ){
+            var list = lists[i];
+            list.lkindex = i;
+            list.contentheight = 300;
+
+            list.contenthtml = "<div id='lists"+ i +"' style='width:300px;height:0px;overflow:hidden'>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+            "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+            "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br></div>";
+
+            list.innerHTML += list.contenthtml;
+
+            list.contentstyle = document.getElementById(("lists"+i)).style;
+            list.contentstyle.transition = "1s";
+
+            list.lkflag = 0; // shrink, 1: unfold
+            //css init
+            var style = list.style;
+            style.width = '300px';
+            style.height = '100px'
+            style.background = 'blue';
+            style.marginBottom = '2px';
+            style.transition = "1s";
+
+            list.lktitle = document.getElementById("titlelist"+i);
+            list.lktitle.parent = list;
+            list.lktitle.addEventListener("click", function(){
+
+                if( this.lkflag == 0 ){//点击项未展开
+                    if( currentunfold ){//若当前已有展开的项,则先关闭
+                        currentunfold.contentstyle.height = "0px";
+                        list.lktitle.parent.shrink(currentunfold);
+
+                        currentunfold.lkflag = 0;
+                        console.log(currentunfold.lkindex);
+                    }
+                    list.lktitle.parent.unfold(); // 展开用户点击的项
+                    list.lktitle.parent.contentstyle.height = "300px";
+                    currentunfold = this; // 更新当前展开项
+                    list.lktitle.parent.lkflag = 1;// 记录当前项已展开
+                }else{//如果当前项已展开
+                    list.lktitle.parent.contentstyle.height = "0px";
+                    list.lktitle.parent.shrink(list.lktitle.parent);//收缩当前项,即currentunfold == this
+                    currentunfold = null;//当前无展开项
+                    list.lktitle.parent.lkflag = 0;//记录当前项已收缩
+                }
+
+            })
+
+            list.shrink = function(current){ //收缩
+                for( var i = current.lkindex +1; i < lists.length; i++  ){
+                    lists[i].style.transform = "translate(0px, 0px)";
+                }
+            }
+
+            list.unfold = function(){ // 展开
+                for( var i = this.lkindex +1; i < lists.length; i++  ){
+                    lists[i].style.transform = "translate(0px,"+ this.contentheight + "px)";
+                }
+            };
+        }
+    }
+    //        var list1 = document.getElementById("list1");
+    //        var list2 = document.getElementById("list2");
+    //        var list2style = document.querySelector('#list2').style;
+    //
+    //        list2.addEventListener("click", function(){
+    //            list2style.transition = "1s";
+    //            list2style.transform = "translate(0px,700px)";
+    //        })
+
+</script>
+</body>
+</html>

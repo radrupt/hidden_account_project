@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .io_main{
+
+            width : 300px;
+            height :280px;
+            background: rgba(1,1,1,0.8);
+            overflow: hidden;
+            position: relative;
+            border: solid blue;
+        }
+        .list{
+            width : 100%;
+            height :60px;
+            background: yellow;
+        }
+
+        .title{
+            width:300px;
+            height: 60px;
+            position: relative;
+        }
+        .orderimg{
+            position: absolute;
+            left: 280px;
+        }
+        .header{
+            position: absolute;
+            top: 0px;
+            width:100%;
+            height: 30px;
+            background: rgba(1,1,1,0.2);;
+            z-index:99;
+            transition: 1s;
+        }
+        .footer{
+            position: absolute;
+            top: 250px;
+            width:100%;
+            height: 30px;
+            background: rgba(1,1,1,0.2);;
+            z-index:99;
+            transition: 1s;
+        }
+
+    </style>
+
+</head>
+<body >
+    <div class="io_main" id="io_main">
+        <div class="header" id="header" style="display: none"></div><div class="footer" id="footer" style="display: none"></div>
+     </div>
+    </div>
+    <script>
+
+        var info1=  {"status":"货品运输中","id":"LK1503020043","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+        var info2=  {"status":"货品运输中","id":"LK1503020044","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+        var info3=  {"status":"货品运输中","id":"LK1503020045","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+        var info4=  {"status":"货品运输中","id":"LK1503020042","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+        var info5=  {"status":"货品运输中","id":"LK1503020041","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+        var info6=  {"status":"货品运输中","id":"LK1503020046","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};
+
+        var infos = [info1, info2, info3, info4, info5, info6];
+
+        //lists: title, content
+        var Flex = function(infos){
+            var listids = new Array();//存储下拉列表的id
+            var alllistdefaultheight = 0;
+            var alllistcurrentheight = 0;
+            var viewheight = 220 ;//这样定义的变量就是静态变量
+            var step = 60;
+
+            //滑动框html
+            this.getFlexDiv = function(){
+                var flexdiv = '';
+                for( var i = 0; i < infos.length; i++ ){
+                    var info = infos[i];
+                    var id=info.id;
+                    flexdiv += '' +
+                            '<div class="list"' + ' id="list' + id + '">' +
+                                '<div class="title" id="listtitle' + id + '">' +
+                                    '<img class="orderimg" id="listtitleimg' + id + '" src="./images/ico/line_p_2.png" />' +
+                                '</div>' +
+//                            getOrderContent() +
+                            '</div>';
+                    listids.push("list"+id);
+                }
+                return flexdiv;
+            }
+
+            //get dom
+            function lkGetElementById(lists){
+                var elementlists = new Array();
+                for( var i = 0; i < lists.length; i++ ){
+                    elementlists[i] = document.getElementById(lists[i]);
+                }
+                return elementlists;
+            }
+
+            //lists: doms
+            //lists: 所有订单号
+            this.init = function(){
+                var lists = lkGetElementById(listids);
+
+                var currentunfold = null;
+                alllistdefaultheight = lists.length * (60 + 2);//所有list都处于收缩状态的情况下的总高度
+                alllistcurrentheight = alllistdefaultheight;
+
+                for( var i = 0; i < lists.length; i++ ){
+
+                    var list = lists[i];
+                    list.lkindex = i;
+                    list.contentheight = 300;
+                    var marks = list.id.replace("list","");//车牌号
+                    list.contenthtml = "<div id='listcontent"+ marks +"' style='color:white;width:300px;height:0px;overflow:hidden'>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+                    "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+                    "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br></div>";
+
+                    list.innerHTML += list.contenthtml;
+
+                    list.contentstyle = document.getElementById(("listcontent"+marks)).style;
+                    list.contentstyle.transition = "1s";
+
+                    //以后是要通过计算得到内容高度的
+                    list.contentheight = 300;
+
+                    list.lkflag = 0; // shrink, 1: unfold
+                    //css init
+                    var style = list.style;
+                    style.width = '300px';
+                    style.height = '60px'
+                    style.marginBottom = '2px';
+                    style.transition = "1s";
+
+                    list.lktitle = document.getElementById("listtitleimg"+marks);
+                    list.lktitle.parent = list;
+
+                    list.lktitle.addEventListener("click", function(){
+                        if( this.parent.lkflag == 0 ){//点击项未展开
+                            if( currentunfold ){//若当前已有展开的项,则先关闭
+                                currentunfold.contentstyle.height = "0px";
+                                this.parent.shrink(currentunfold);
+                                currentunfold.lkflag = 0;
+                                console.log(currentunfold.lkindex);
+                            }
+
+                            alllistcurrentheight = alllistdefaultheight + this.parent.contentheight;
+                            if( downoffset + viewheight < alllistcurrentheight ){
+                                    footerstyle.display = "inline";
+                                if(downoffset > 0){//如果当前订单信息列表高度小于视图高度，则隐藏header和footer
+                                    headerstyle.display = "inline";
+                                }
+                            }
+                            this.parent.unfold(); // 展开用户点击的项
+                            this.parent.contentstyle.height = "300px";
+                            currentunfold = this.parent; // 更新当前展开项
+                            this.parent.lkflag = 1;// 记录当前项已展开
+
+                        }else{//如果当前项已展开
+                            alllistcurrentheight = alllistdefaultheight;
+                            if( downoffset + viewheight > alllistcurrentheight ){
+                                console.log(downoffset+"::" + alllistcurrentheight+"::" + viewheight);
+
+
+                                if( (alllistcurrentheight - viewheight) > 0 ){
+                                    liststyle.transform =
+                                            "translate(0px, -" + (alllistcurrentheight - viewheight-62) + "px)";
+                                    footerstyle.display = "none";
+                                }else{//如果当前订单信息列表高度小于视图高度，则隐藏footer
+                                    liststyle.transform =
+                                            "translate(0px, 0px)";
+                                    footerstyle.display = "none";
+                                }
+                                if( downoffset > 0 ){
+                                    headerstyle.display = "inline";
+                                }else{
+                                    headerstyle.display = "none";
+                                }
+                            }
+                            this.parent.contentstyle.height = "0px";
+                            this.parent.shrink(this.parent);//收缩当前项,即currentunfold == this
+                            currentunfold = null;//当前无展开项
+                            this.parent.lkflag = 0;//记录当前项已收缩
+
+                        }
+                    })
+
+                    list.shrink = function(current){ //收缩
+                        for( var i = current.lkindex +1; i < lists.length; i++  ){
+                            lists[i].style.transform = "translate(0px, 0px)";
+                        }
+                    }
+
+                    list.unfold = function(){ // 展开
+                        for( var i = this.lkindex +1; i < lists.length; i++  ){
+                            lists[i].style.transform = "translate(0px,"+ this.contentheight + "px)";
+                        }
+                    };
+                }
+                var footer = document.getElementById("footer");
+                var header = document.getElementById("header");
+                var alllistlenggth = 5 * 60;//所有list都处于收缩状态的情况下的高度
+                var downoffset = 0;//记录窗体向下偏移的距离
+                var headerstyle = document.querySelector("#header").style;
+                var footerstyle = document.querySelector("#footer").style;
+                var liststyle = document.querySelector("#list").style;
+                liststyle.transition = "1s";
+                console.log(alllistcurrentheight);
+                if( alllistcurrentheight > viewheight ){
+                    footerstyle.display = "inline";
+                }
+                footer.addEventListener("click", function(e){
+
+                    //移动步长20
+                    //我也不知道62是怎么计算的,就这么用
+                    if( downoffset + step > alllistcurrentheight - viewheight - 62){
+                        downoffset = (alllistcurrentheight - viewheight -62) > 0 ? (alllistcurrentheight - viewheight -62) : 0;
+                        footerstyle.display = "none";
+                    }else{
+                        downoffset += step;
+                    }
+                    if( downoffset != 0 ) {
+                        headerstyle.display = "block";
+                    }
+                    liststyle.transform = "translate(0px, -" + downoffset + "px)";
+
+                });
+
+                header.addEventListener("click", function(e){
+                    var list = document.getElementById("list");
+
+                    var liststyle = document.querySelector("#list").style;
+                    liststyle.transition = "1s";
+                    if( downoffset - step < 0 ){
+                        downoffset = 0;
+                    }else{
+                        downoffset -= step;
+                    }
+                    if( downoffset == 0 ) {
+                        headerstyle.display = "none";
+                    }else{
+                        footerstyle.display = "inline";
+                    }
+                    liststyle.transform = "translate(0px, -" + downoffset + "px)";
+
+                });
+            }
+
+        }
+
+        var flex = new Flex(infos);
+        document.getElementById("io_main").innerHTML +='<div id="list">' + flex.getFlexDiv() + '</div>' ;
+        flex.init();
+
+
+
+// var lists = new Array("list1","list2", "list3", "list4");
+//
+//        init(lkGetElementById(lists));
+//
+//        //get dom
+//        function lkGetElementById(lists){
+//            var elementlists = new Array();
+//            for( var i = 0; i < lists.length; i++ ){
+//                elementlists[i] = document.getElementById(lists[i]);
+//            }
+//            return elementlists;
+//        }
+//
+//        //lists: doms
+//        function init(lists){
+//            var currentunfold = null;
+//            for( var i = 0; i < lists.length; i++ ){
+//                var list = lists[i];
+//                console.log(list.id);
+//                list.lkindex = i;
+//                list.contentheight = 300;
+//                list.contenthtml = "<div id='lists"+ i +"' style='color:white;width:300px;height:0px;overflow:hidden'>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+//                "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>"+
+//                "sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br>sdfdsf</br></div>";
+//
+//                list.innerHTML += list.contenthtml;
+//
+//                list.contentstyle = document.getElementById(("lists"+i)).style;
+//                list.contentstyle.transition = "1s";
+//
+//                list.lkflag = 0; // shrink, 1: unfold
+//                //css init
+//                var style = list.style;
+//                style.width = '300px';
+//                style.height = '60px'
+//                style.marginBottom = '2px';
+//                style.transition = "1s";
+//
+//                list.lktitle = document.getElementById("titlelist"+i);
+//                list.lktitle.parent = list;
+//
+//                list.lktitle.addEventListener("click", function(){
+//                    if( this.parent.lkflag == 0 ){//点击项未展开
+//                        if( currentunfold ){//若当前已有展开的项,则先关闭
+//                            currentunfold.contentstyle.height = "0px";
+//                            this.parent.shrink(currentunfold);
+//
+//                            currentunfold.lkflag = 0;
+//                            console.log(currentunfold.lkindex);
+//                        }
+//                        this.parent.unfold(); // 展开用户点击的项
+//                        this.parent.contentstyle.height = "300px";
+//                        currentunfold = this.parent; // 更新当前展开项
+//                        this.parent.lkflag = 1;// 记录当前项已展开
+//                    }else{//如果当前项已展开
+//                        this.parent.contentstyle.height = "0px";
+//                        this.parent.shrink(this.parent);//收缩当前项,即currentunfold == this
+//                        currentunfold = null;//当前无展开项
+//                        this.parent.lkflag = 0;//记录当前项已收缩
+//                    }
+//                })
+//
+//                list.shrink = function(current){ //收缩
+//                    for( var i = current.lkindex +1; i < lists.length; i++  ){
+//                        lists[i].style.transform = "translate(0px, 0px)";
+//                    }
+//                }
+//
+//                list.unfold = function(){ // 展开
+//                    for( var i = this.lkindex +1; i < lists.length; i++  ){
+//                        lists[i].style.transform = "translate(0px,"+ this.contentheight + "px)";
+//                    }
+//                };
+//            }
+//        }
+
+    </script>
+</body>
+</html>

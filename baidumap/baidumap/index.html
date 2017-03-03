@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:100%}
+    </style>
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6132d8d26b550b1d90eff2995ed33cb3"></script>
+    <script type="text/javascript" src="./js/InfoBox_min.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+
+    <title>地图展示</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="./js/map.js" ></script>
+<!--<script>-->
+
+    <!--var info =  {"status":"货品运输中","id":"LK1503020043","sender":{"province":"上海","city":"上海","district":"闸北","address":"秣陵路303号"},"receiver":{"province":"北京","city":"北京","district":"东城","address":"南京路6号"},"orderstatus":[{"id":"843","orderid":"207","status":"1","update_time":"2015-03-05 10:26:05","update_accountid":"6","isshow":"1","note":"订单已提交，等待受理。"},{"id":"844","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"1","note":"订单已受理，等待安排司机。"},{"id":"845","orderid":"207","status":"2","update_time":"2015-03-05 10:26:33","update_accountid":"35","isshow":"2","note":"订单已受理，正在做运输计划。"},{"id":"846","orderid":"207","status":"3","update_time":"2015-03-05 10:27:33","update_accountid":"35","isshow":"2","note":"运输计划已完成，等待安排司机。"},{"id":"908","orderid":"207","status":"4","update_time":"2015-03-06 13:37:50","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"909","orderid":"207","status":"4","update_time":"2015-03-06 13:37:56","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"910","orderid":"207","status":"4","update_time":"2015-03-06 13:38:14","update_accountid":"35","isshow":"1","note":"已安排1位司机来承运订单。"},{"id":"911","orderid":"207","status":"5","update_time":"2015-03-06 13:39:53","update_accountid":"78","isshow":"2","note":"货品已经开始运输了。"}],"waybill":[{"id":"221","orderid":"207","print_orderid":"LK1503020043","print_waybillid":"LK1503020043_0","status":"3","create_time":"2015-03-05 10:27:17","update_time":"2015-03-06 13:39:53","update_accountid":"22","product_type":"1","require_truck_length":"29","truck_number":"1","freight":"8000","is_buy_insurance":"1","total_value":"100000","insurance_amount":"100","is_bidding":"1","bidding_time":"2015-03-05 11:00:00","accountid":"78","trucker_name":"刘骥","trucker_mobile":"18621820303","truckno":"新SS4561","truck_length":"0","goods_brief":"","sender_name":"杨柳","sender_mobile":"13562587895","sender_province":"上海","sender_city":"上海","sender_district":"闸北","sender_provinceid":"310000","sender_cityid":"310100","sender_districtid":"310108","sender_address":"秣陵路303号","sender_company":"办事处","require_sendtime":"2015-03-06 15:30:00","actual_sendtime":"2015-03-06 13:39:53","receiver_name":"王小波2","receiver_mobile":"13854265869","receiver_province":"北京","receiver_city":"北京","receiver_district":"东城","receiver_provinceid":"110000","receiver_cityid":"110100","receiver_districtid":"110101","receiver_address":"南京路6号","receiver_company":"","require_arrivetime":"2015-03-09 18:54:00","actual_arrivetime":"0000-00-00 00:00:00","bankid":"0","amount_payable":"8000","amount_paid":"0","is_abnormal":"0","rating":"0","rating_note":"","ref_tempid":"0","total_weight":"25000","total_volume":"62.5","is_temp":"1","location":{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},"xs":[{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}]}]};-->
+
+    <!--var senderR= info.sender.province+info.sender.city+info.sender.district+info.sender.address;-->
+    <!--var receiverR= info.receiver.province+info.receiver.city+info.receiver.district+info.receiver.address;-->
+
+    <!--var mapinfo = {}; // bottom map overlay data-->
+
+    <!--var senderPGeocoder = new BMap.Geocoder();-->
+    <!--senderPGeocoder.getPoint(senderR, function(point){-->
+        <!--if (point) {-->
+            <!--mapinfo.senderP=point;-->
+            <!--xboot();-->
+        <!--}else{-->
+            <!--alert("您选择地址没有解析到结果!");-->
+        <!--}-->
+    <!--}, info.sender.province);-->
+
+    <!--var receiverPGeocoder = new BMap.Geocoder();-->
+    <!--receiverPGeocoder.getPoint(receiverR, function(point){-->
+        <!--if (point) {-->
+            <!--mapinfo.receiverP=point;-->
+            <!--xboot();-->
+        <!--}else{-->
+            <!--alert("您选择地址没有解析到结果!");-->
+        <!--}-->
+    <!--}, info.receiver.province);-->
+
+    <!--function xboot(){-->
+        <!--if(mapinfo.receiverP && mapinfo.senderP){-->
+            <!--xboot.bootn();-->
+        <!--}-->
+    <!--}-->
+
+    <!--xboot.bootn = function(){-->
+        <!--//计算MID-->
+        <!--mapinfo.midlat = (mapinfo.receiverP.lat+mapinfo.senderP.lat)/2;-->
+        <!--mapinfo.midlng =(mapinfo.receiverP.lng+mapinfo.senderP.lng)/2;-->
+        <!--console.log("sd");-->
+        <!--wangd();-->
+    <!--};-->
+
+    <!--function wangd() {-->
+        <!--var map = new BMap.Map('container');-->
+        <!--var receiverP = mapinfo.receiverP;-->
+
+        <!--var senderP = mapinfo.senderP;-->
+        <!--var midpoint = new BMap.Point(mapinfo.midlng, mapinfo.midlat);-->
+        <!--map.centerAndZoom(midpoint, 11);-->
+        <!--map.enableScrollWheelZoom(true)-->
+
+        <!--var html = ['<div class="infoboxcss1"><p>运输中车辆</p><div>最近更新时间: 2015-03-11 16:16:34"</div></div>'];-->
+        <!--var infoBox = new BMapLib.InfoBox(map,html);-->
+
+
+        <!--var driving = new BMap.DrivingRoute(map, {-->
+            <!--onSearchComplete: function (results) {-->
+                <!--if (driving.getStatus() == BMAP_STATUS_SUCCESS) {-->
+                    <!--// 地图覆盖物-->
+                    <!--addOverlays(results);-->
+
+                <!--}-->
+            <!--}-->
+        <!--});-->
+        <!--driving.setPolylinesSetCallback(-->
+                <!--function (x) {-->
+                    <!--mainline = x[0].yi;-->
+                    <!--mainline.setStrokeColor('#111');-->
+                    <!--mainline.setStrokeOpacity(0.15);-->
+                <!--}-->
+        <!--);-->
+        <!--console.log(JSON.stringify(info.waybill[0].xs));-->
+        <!--var points = [{"time":"2015-03-06 14:01:04","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:59:51","latitude":"31.165402","longitude":"121.138779"},{"time":"2015-03-06 13:57:24","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:52:12","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:49:43","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:47:22","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:45:27","latitude":"31.15441","longitude":"121.124753"},{"time":"2015-03-06 13:42:33","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:41:32","latitude":"31.153622","longitude":"121.121005"},{"time":"2015-03-06 13:40:32","latitude":"31.153622","longitude":"121.121005"}];-->
+        <!--points = wayPoints(points);-->
+        <!--console.log(JSON.stringify(points));-->
+        <!--driving.search(receiverP, senderP, {waypoints : points });-->
+
+        <!--// 添加覆盖物并设置视野-->
+        <!--function addOverlays(results) {-->
+            <!--var start = results.getStart();-->
+            <!--var end = results.getEnd();-->
+            <!--addStart(start.point, start.title);-->
+            <!--addEnd(end.point, end.title);-->
+            <!--var viewPoints = [start.point, end.point];-->
+            <!--// 获取方案-->
+            <!--var plan = results.getPlan(0);-->
+            <!--// 获取方案中包含的路线-->
+            <!--for (var i = 0; i < plan.getNumRoutes(); i++) {-->
+                <!--addRoute(plan.getRoute(i).getPath());-->
+                <!--viewPoints.concat(plan.getRoute(i).getPath());-->
+            <!--}-->
+            <!--// 设置地图视野-->
+            <!--map.setViewport(viewPoints, {-->
+                <!--margins: [40, 10, 10, 10]-->
+            <!--});-->
+        <!--}-->
+
+
+        <!--// 添加起点覆盖物-->
+        <!--function addStart(point, title) {-->
+            <!--var dd = map.addOverlay(new BMap.Marker(point, {-->
+                <!--title: title,-->
+                <!--icon: new BMap.Icon("images/ico/receiver.png", new BMap.Size(50, 144))-->
+            <!--}));-->
+
+        <!--}-->
+
+        <!--// 添加终点覆盖物-->
+        <!--function addEnd(point, title) {-->
+            <!--map.addOverlay(new BMap.Marker(point, {-->
+                <!--title: title,-->
+                <!--icon: new BMap.Icon("images/ico/sender.png", new BMap.Size(50, 144))-->
+            <!--}));-->
+        <!--}-->
+
+        <!--// 添加路线-->
+        <!--//这里使用setPolylinesSetCallback有什么好处-->
+        <!--//如果像我这么用是不是应该每次都clear-->
+        <!--function addRoute(path) {-->
+            <!--var marker;-->
+            <!--BMap.Polyline.prototype.addEventListener("mouseover", function (e) {-->
+
+                <!--infoBox.open(e.point);-->
+
+                <!--wayoption.setStrokeColor("#333");-->
+            <!--});-->
+            <!--BMap.Polyline.prototype.addEventListener("mouseout", function (e) {-->
+
+                <!--infoBox.hide();-->
+                <!--infoBox.close();//直接close无效-->
+                <!--wayoption.setStrokeColor("#f33");-->
+            <!--});-->
+            <!--var wayoption = new BMap.Polyline(path, {//路线参数-->
+                <!--strokeColor: '#f33',-->
+                <!--enableClicking: false-->
+            <!--});-->
+
+            <!--map.addOverlay(wayoption);-->
+
+
+        <!--}-->
+
+        <!--//wpoints服务器保存的导航路线上均匀分布的点,但是百度map DrivingRoute search most 只 接收 10 point-->
+        <!--function wayPoints(wpoints){//导航路线上均匀分布的点-->
+
+            <!--var routed = wpoints;-->
+            <!--if(routed.length>0) {-->
+                <!--var xss = [];-->
+                <!--if (routed.length > 10) {-->
+                    <!--var x = routed.length / 10;-->
+                    <!--xss[0] = routed[0];-->
+                    <!--for (var i = 1; i < 9; i++) {-->
+                        <!--xss[i] = routed[Math.floor(x * i)];-->
+                    <!--}-->
+                    <!--xss[9] = routed[routed.length - 1];-->
+                <!--} else {-->
+                    <!--xss = routed;-->
+                <!--}-->
+                <!--//xss->构造路径数组-->
+                <!--xss = redo(xss);-->
+                <!--return xss;-->
+            <!--}else-->
+                <!--return null;-->
+
+        <!--}-->
+
+<!--//-->
+
+        <!--function redo(arr){-->
+            <!--var result = [];-->
+            <!--for(var i=0;i<arr.length;i++){-->
+                <!--result[i]=(new BMap.Point(arr[i]['longitude'],arr[i]['latitude']));-->
+            <!--}-->
+            <!--return result;-->
+        <!--}-->
+
+    <!--}-->
+
+<!--</script>-->
+</body>
+</html>
+
