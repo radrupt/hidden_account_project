@@ -1,0 +1,19 @@
+<div *ngFor="#item of config" [ngSwitch]="item.type">
+        <div *ngSwitchWhen="'text'">
+            <input placeholder="{{item.title}}" [(ngModel)]="item.value" type="text">
+            <search-form-text [data]="item"></search-form-text>
+        </div>
+        <div *ngSwitchWhen="'select'">
+            <search-form-select [data]="item"></search-form-select>
+        </div>
+        <div *ngSwitchWhen="'date'">
+            <search-form-date [data]="item"></search-form-date>
+        </div>
+        <div *ngSwitchWhen="'date-double'">
+            <search-form-date-range [data]="item"></search-form-date-range>
+        </div>
+        <div *ngSwitchWhen="'area'">
+            <search-form-area [data]="item"></search-form-area>
+        </div>
+</div>
+<a (click)="search()">search</a>

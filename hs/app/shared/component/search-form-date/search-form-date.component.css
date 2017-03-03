@@ -1,0 +1,105 @@
+.time-picker{
+    position: absolute;
+    z-index: 100;
+    width: 19em;
+    padding: .2em .2em 0;
+    border: 1px solid #aaa;
+    background: white;
+    display: none;
+}
+.time-picker:focus{
+    outline:none;
+}
+a{
+    text-decoration: none;
+}
+.time-picker-header{
+    position: relative;
+    padding: .2em 0;
+    border: 1px solid #aaa;
+    color: #222;
+    font-weight: bold;
+    background: #CEC9C9;
+}
+.time-prev,.time-next{
+    position: absolute;
+    top: 4px;
+    width: 1.8em;
+    height: 1.8em;
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+.time-prev span:hover,.time-next span:hover{
+    color:#34495E;
+}
+.time-prev span,.time-next span{
+    display: block;
+}
+.time-prev span{
+    display: block;
+    transform: rotate(180deg);
+}
+.time-prev{
+    left: 2px;
+}
+.time-next{
+    right: 2px;
+}
+.time-picker-header a{
+    color: #222;
+}
+.time-select{
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+.time-select select{
+    width: 45%;
+    font-size: 1em;
+    margin: 1px 0;
+}
+.time-picker table {
+    width: 100%;
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em;
+}
+.time-picker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+}
+.time-picker td {
+    border: 0;
+    padding: 1px;
+}
+.time-picker td a{
+    display: block;
+    padding: .2em;
+    text-align: right;
+    text-decoration: none;
+    cursor: pointer;
+}
+.time-picker td .unselected{
+    border: 1px solid #d3d3d3;
+    background: #e6e6e6 ;
+    font-weight: normal;
+    color: #555;
+}
+.time-picker td .selected{
+    border: 1px solid #999;
+    background: white ;
+    color: #555;
+}
+.time-picker td .unselected:hover{
+    border: 1px solid #999;
+}
+.ipt{
+    width:120px;
+}
+input.err{
+    border-color: red;
+}

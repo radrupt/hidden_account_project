@@ -1,0 +1,5 @@
+目前版本：1.1.5
+下载：https://github.com/ajaxorg/ace-builds/tags
+
+自行修改：自动补全弹出层，自动选中第一个
+t.completer.autoSelect=!0 ==》 t.completer.autoSelect=!0,

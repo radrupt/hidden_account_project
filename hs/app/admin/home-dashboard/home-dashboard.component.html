@@ -1,0 +1,67 @@
+<div view-framework>
+    <div class="viewFramework-topbar">
+        <div class="hs-topbar">
+            <div class="topbar-wrap topbar-clearfix">
+                <div class="topbar-head topbar-left topbar-clearfix">
+                    <a [routerLink]="['HomeDashboard']" class="topbar-logo topbar-left">
+                        <img src="./app/images/logo.png" />
+                    </a>
+                </div>
+                <div class="topbar-info topbar-right topbar-clearfix">
+                    <div class="topbar-left topbar-info-item">
+                        <a class="topbar-btn" [routerLink]="['HomeDashboard','Shipper','look']">货主</a>
+                    </div>
+                    <div class="topbar-left topbar-info-item">
+                        <a class="topbar-btn" [routerLink]="['HomeDashboard','Driver','look']">司机</a>
+                    </div>
+                    <div class="topbar-left topbar-info-item">
+                        <a class="topbar-btn" [routerLink]="['HomeDashboard','Order','look']">订单</a>
+                    </div>
+                   <div class="topbar-left topbar-user" *ngIf="userService.getUsername()" >
+                       <div class="dropdown topbar-info-item" [ngClass]="{open: userInfoClick, '': !userInfoClick}" tabindex="1" (blur)="userInfoClick = false">
+                            <a class="dropdown-toggle topbar-btn" data-toggle="dropdown" (click)="userInfoClick = !userInfoClick">
+                                <span>{{userService.getUsername()}}</span>
+                                <span class="icon-iconfont-arrowtop"></span>
+                            </a>
+                           <ul class="dropdown-menu">
+                               <li class="topbar-info-btn">
+                                   <a (click)="logout()">
+                                       <span>退出</span>
+                                   </a>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="viewFramework-body viewFramework-sidebar-full" [ngClass]="{mini: sidebarClick, '': !sidebarClick}">
+        <div class="" [ngClass]="{'arrowright icon-iconfont-arrowrightdl': sidebarClick, 'arrowleft icon-iconfont-arrowleftdl': !sidebarClick}"
+             (click)="sidebarClick = !sidebarClick"></div>
+        <div class="viewFramework-sidebar" [ngClass]="{close: sidebarClick, '': !sidebarClick}">
+            <div class="sidebar-content">
+                <div class="sidebar-inner">
+                    <div class="sidebar-fold icon-iconfont-3list"></div>
+                    <div class="sidebar-nav sidebar-nav-fold" *ngFor="#menu of leftMenu" [ngClass]="{'sidebar-nav-fold':menu.open}">
+                        <div class="sidebar-title" (click)="menu.open = !menu.open">
+                            <div class="sidebar-title-inner">
+                                <span class="sidebar-title-icon">
+                                    <span class="icon-iconfont-arrowtop"></span>
+                                </span>
+                                <span>{{menu.title}}</span>
+                            </div>
+                        </div>
+                        <ul class="sidebar-trans" [style.height]="menu.listHeight" >
+                            <li class="nav-item" *ngFor="#item of menu.list" [ngClass]="{active:productId == item.productId}"
+                                (click)="productId = item.productId" ><a [routerLink]="item.routerLink" ><span class="nav-title">{{item.name}}</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="viewFramework-product">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

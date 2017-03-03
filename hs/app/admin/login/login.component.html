@@ -1,0 +1,13 @@
+<div class="login-form">
+    <div class="form-group">
+        <input type="text" class="form-control login-field" value="" placeholder="用户名" [(ngModel)] = "username" (keyup)="inputChangeListen()">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control login-field" value="" placeholder="密码" [(ngModel)] = "password" (keyup)="inputChangeListen()">
+    </div>
+    <div class="as-line" *ngIf="errorMessage">
+        <span class="hint-error">{{errorMessage}}</span>
+        <div style="width:100%;height:15px;display:inline-block;vertical-align:middle;flex-grow:0;flex-shrink:0;-webkit-flex-grow:0;-webkit-flex-shrink:0;"></div>
+    </div>
+    <a class="btn btn-primary btn-lg btn-block" [ngClass]="{logining:logining}" (click)="onSubmit(username,password,$event )">登录</a>
+</div>

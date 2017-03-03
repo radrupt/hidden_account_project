@@ -1,0 +1,49 @@
+<input type="text"  placeholder="yyyy-mm-dd" class="ipt form-control" [(ngModel)]="choosedate"
+       (focus)="inputfocus=true" (blur)="leave('inputfocus')"  (keydown)="limitInput($event)">
+<div id="time-picker" class="time-picker" (focus)="timepickfocus=true" (blur)="leave('timepickfocus')"
+     [ngClass]="{show:showTimePicker}" tabindex="2">
+    <div class="time-picker-header">
+        <a class="time-prev" (click)="prevMonth()">
+            <span class="icon-iconfont-xiangyou3fill" ></span>
+        </a>
+        <a class="time-next" (click)="nextMonth()">
+            <span class="icon-iconfont-xiangyou3fill"></span>
+        </a>
+        <div class="time-select" >
+            <select [(ngModel)]="yearcurrent" (focus)="selectyearfocus=true" (blur)="leave('selectyearfocus')">
+                <option *ngFor="#item of yearlist" value="{{item}}" >{{item}}</option>
+            </select>
+            <select [(ngModel)]="monthcurrent" (focus)="selectmonthfocus=true" (blur)="leave('selectmonthfocus')">
+                <option *ngFor="#item of monthlist" value="{{item}}" >{{item}}</option>
+            </select>
+        </div>
+    </div>
+   <table>
+       <thead><tr>
+           <th><span title="星期一">一</span></th>
+           <th><span title="星期二">二</span></th>
+           <th><span title="星期三">三</span></th>
+           <th><span title="星期四">四</span></th>
+           <th><span title="星期五">五</span></th>
+           <th><span title="星期六">六</span></th>
+           <th><span title="星期日">日</span></th>
+       </tr></thead>
+       <tbody>
+            <tr *ngFor="#row of [0,1,2,3,4]">
+                <td *ngFor="#week of [0,1,2,3,4,5,6]">
+                    <a (click)="dateClick(datelist[row*7+week])" *ngIf="datelist[row*7+week]"
+                       [ngClass]="{unselected:
+                       !(yearcurrent == timecurrent.getFullYear()
+                       && monthcurrent == timecurrent.getMonth()+1
+                       && datelist[row*7+week] == timecurrent.getDate()) ,
+                       selected:
+                       yearcurrent == timecurrent.getFullYear()
+                       && monthcurrent == timecurrent.getMonth()+1
+                       && datelist[row*7+week] == timecurrent.getDate()}">
+                        {{datelist[row*7+week]}}
+                    </a>
+                </td>
+            </tr>
+       </tbody>
+   </table>
+</div>

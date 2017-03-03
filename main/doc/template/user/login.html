@@ -1,0 +1,43 @@
+<!--user login-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title><?php echo $L['title'];?></title>
+	<link rel="Shortcut Icon" href="<?php echo STATIC_PATH;?>/images/favicon.ico">
+	<link href="./static/style/font-awesome/style.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_PATH;?>style/login.css">
+</head>
+
+<body>
+   <div class="loginbox pop_fadein">
+		<div class="title">
+			<div class="logo">软件所<b>文档管理</b></div>
+			<div class='info'>——<?php echo $L['title_name'];?></div>
+		</div>
+		<form method="post" action="./index.php?user/loginSubmit">
+			<div class="inputs">
+				<div><span><?php echo $L['username'];?>：</span><input id="username" name='name' type="text" placeholder="<?php echo $L['username'];?>" required/> </div> 
+				<div><span><?php echo $L['password'];?>：</span><input id="password" name='password' type="password" placeholder="<?php echo $L['password'];?>" required /></div>
+            	<?php if(isset($_SESSION['code_error_time']) && intval($_SESSION['code_error_time']) >=3){?>
+					<div class='check_code'><span><?php echo $L['login_code'];?>：</span><input name='check_code' class="check_code" type="text" placeholder="<?php echo $L['login_code'];?>" required /> <img src='./index.php?user/checkCode' onclick="this.src='./index.php?user/checkCode'" />
+					<div style="clear:both;"></div></div>				
+				<?php }?>
+			</div>
+			<div class="actions">
+				<input type="submit" id="submit" value="<?php echo $L['login'];?>" />
+				<input type="checkbox" class="checkbox" name="rember_password" id='rm' checked='checked' />
+				<label for='rm'><?php echo $L['login_rember_password'];?></label>				
+			</div>
+			<div class="msg"><?php echo $msg;?></div>
+			<div style="clear:both;"></div>
+			<div class='guest'>
+			<a href="./index.php?user/loginSubmit&name=guest&password=guest"><?php echo $L['guest_login'];?><i class=' icon-arrow-right'></i></a></div>
+		</form>
+	</div><a href=""></a>
+	<div class="footer" style="color:red;position:relative;margin-top:500px">
+	    使用google，搜狗，opera浏览器能有更佳的体验
+	<!--Powered by <a href="http://kalcaddle.com" target="_blank">Kodexplorer</a> v<?php echo KOD_VERSION;?> | ©<?php echo $L['us'];?> All Rights Reserved.
+	--></div>
+</body>
+</html>

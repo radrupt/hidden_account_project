@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Forgetting</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="item_title_add">menu_add</string>
+	<string name="prompt_input">input the new inventory！</string>
+	<string name="take_picture">take picture</string>
+	<string name="take_whole_picture">take whole picture</string>
+	<string name="take_part_picture">take part picture</string>
+	<string name="preview_small_picture">preview small picture</string>
+	<string name="post_new_info">post new info</string>
+</resources>

@@ -1,0 +1,9 @@
+<select [(ngModel)]="provid">
+    <option *ngFor="#item of _area" value="{{item.id}}" >{{item.region}}</option>
+</select>
+<select [(ngModel)]="cityid">
+    <option *ngFor="#item of _prov.childs" value="{{item.id}}" >{{item.region}}</option>
+</select>
+<select [(ngModel)]="distid">
+    <option *ngFor="#item of _city.childs" value="{{item.id}}" >{{item.region}}</option>
+</select>

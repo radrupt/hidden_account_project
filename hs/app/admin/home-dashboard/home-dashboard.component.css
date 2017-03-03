@@ -1,0 +1,336 @@
+a {
+    color: #06C;
+    cursor: pointer;
+}
+.viewFramework-topbar{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: #09C;
+    z-index: 101;
+}
+.hs-topbar{
+    position: relative;
+    z-index: 100;
+    clear: both;
+    height: 50px;
+    background: #09C;
+    font-size: 12px;
+    min-width: 403px;
+}
+.hs-topbar .topbar-wrap,.hs-topbar .topbar-logo,.hs-topbar .topbar-home,.hs-topbar .topbar-info,.hs-topbar .topbar-nav,.hs-topbar .topbar-home-link{
+    height: 100%;
+}
+.hs-topbar .topbar-clearfix:before,.hs-topbar .topbar-clearfix:after{display:table;content:" "}.hs-topbar .topbar-clearfix:after{clear:both}
+.hs-topbar .topbar-head {
+    background: #008fbf;
+    height: 50px;
+    position: relative;
+    z-index: 3;
+}
+.hs-topbar .topbar-left {
+    float: left;
+}
+.hs-topbar .topbar-right {
+    float: right;
+}
+.hs-topbar .topbar-logo {
+    background: #0087b4;
+}
+.hs-topbar a {
+    text-decoration: none;
+}
+.topbar-logo img{
+    padding: 14px;
+    height: 100%;
+}
+.hs-topbar .topbar-info{
+    background: #008fbf;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+.hs-topbar .topbar-btn {
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+}
+.hs-topbar .topbar-info-item{
+    display: inline-block;
+    margin-left: 1px;
+}
+.hs-topbar .topbar-info-item:focus{
+    outline:none;
+}
+.hs-topbar .topbar-btn:hover, .hs-topbar .topbar-btn.topbar-btn-dark {
+    background: #008fbf;
+}
+.hs-topbar .topbar-info .topbar-btn:hover, .hs-topbar .topbar-info .topbar-btn.topbar-btn-dark {
+    background: #008fbf;
+}
+.hs-topbar .topbar-info .topbar-btn {
+    padding: 0 10px;
+    height: 50px;
+    display: block;
+    z-index: 2;
+    background: #09c;
+}
+.dropdown {
+    position: relative;
+}
+.hs-topbar .topbar-info .dropdown .dropdown-menu {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    border: none;
+}
+.hs-topbar .dropdown .dropdown-menu {
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 0;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    font-size: 12px;
+    border-radius: 0px;
+    padding: 0px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+}
+.hs-topbar .icon-iconfont-arrowtop {
+    display: inline-block;
+    transform: rotate(180deg);
+    width: 18px;
+    text-align: center;
+    vertical-align: middle;
+    transition: transform 0.2s, vertical-align 0.2s;
+    -o-transition: transform 0.2s, vertical-align 0.2s;
+    -ms-transition: transform 0.2s, vertical-align 0.2s;
+    -moz-transition: transform 0.2s, vertical-align 0.2s;
+    -webkit-transition: transform 0.2s, vertical-align 0.2s;
+}
+.hs-topbar .dropdown.open .icon-iconfont-arrowtop {
+    vertical-align: text-top;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+.hs-topbar .topbar-info .dropdown.open .topbar-btn {
+    color: #333;
+    background: #fff;
+    border-bottom: 1px solid #eaedf1;
+    position: relative;
+}
+.hs-topbar .topbar-info .topbar-info-btn {
+    height: 40px;
+    border-bottom: 1px solid #eaedf1;
+}
+.hs-topbar .dropdown .dropdown-menu a {
+    padding: 0;
+}
+.hs-topbar .topbar-info .topbar-info-btn a {
+    line-height: 39px;
+    padding-left: 10px;
+}
+.dropdown-menu li a {
+    padding: 7px 16px;
+}
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333333;
+    white-space: nowrap;
+}
+.open> a:hover,.open> a:focus{
+    color: #000;
+    background-color: #FAFAFA;
+    border-color: #EEE;
+}
+.viewFramework-body {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 0px;
+    background-color: #000;
+    z-index: 100;
+}
+.viewFramework-sidebar {
+    width: 0px;
+    display: none;
+    position: fixed;
+    top: 50px;
+    bottom: 0px;
+    background-color: #293038;
+    z-index: 102;
+    overflow-x: hidden;
+}
+.viewFramework-sidebar .sidebar-fold {
+    height: 30px;
+    width: 180px;
+    background: #394555;
+    color: #aeb9c2;
+    text-align: center;
+    line-height: 30px !important;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.viewFramework-sidebar .sidebar-fold:hover {
+    background: #37424f;
+}
+.viewFramework-sidebar-full .viewFramework-sidebar, .viewFramework-sidebar.sidebar-full {
+    width: 180px;
+    display: block;
+}
+.viewFramework-sidebar .sidebar-content {
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.viewFramework-sidebar .sidebar-nav {
+    width: 180px;
+}
+.viewFramework-body .viewFramework-sidebar.close{
+    width: 0px;
+    overflow: hidden;
+}
+.viewFramework-body .arrowright,.viewFramework-body .arrowleft{
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    top: 40%;
+    z-index: 10;
+    font-size: 27px;
+    height: 30px;
+    width: 30px;
+    border-radius: 0px 15px 15px 0px;
+    line-height: 29px;
+
+}
+.viewFramework-body .arrowright:hover,.viewFramework-body .arrowleft:hover{
+    background: #37424f;
+    color: #fff;
+}
+.viewFramework-body .arrowleft{
+    left: 150px;
+    font-size: 27px;
+    z-index: 110;
+    border-radius: 15px 0px 0px 15px;
+    line-height: 30px;
+}
+.viewFramework-body .arrowright{
+    left: 0px;
+    color: #394555;
+}
+.viewFramework-product {
+    width: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding:16px 15px;
+    overflow: hidden;
+    background: white;
+}
+.viewFramework-sidebar-full .viewFramework-product {
+    left: 180px;
+}
+.viewFramework-body.mini .viewFramework-product {
+    left: 0px;
+}
+.viewFramework-sidebar .sidebar-nav {
+    width: 180px;
+}
+.viewFramework-sidebar .sidebar-nav .sidebar-title {
+    height: 40px;
+    background: #22282e;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.viewFramework-sidebar .sidebar-nav .sidebar-title-icon {
+    display: inline-block;
+    margin: -4px 8px 0 20px;
+    vertical-align: middle;
+    transform: rotate(90deg);
+    transition: transform 0.12s;
+}
+.sidebar-nav-fold ul{height:0 !important;overflow:hidden}
+.viewFramework-sidebar .sidebar-nav-fold .sidebar-title{background:#37424f;border-bottom:1px solid #414d5c}
+.viewFramework-sidebar .sidebar-nav-fold .sidebar-title-icon{transform:rotate(180deg);-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-ms-transform:rotate(180deg);-o-transform:rotate(180deg)}
+.viewFramework-sidebar .sidebar-nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+}
+.viewFramework-sidebar .sidebar-trans {
+    -o-transition: height 0.12s ease-in-out;
+    -ms-transition: height 0.12s ease-in-out;
+    -moz-transition: height 0.12s ease-in-out;
+    -webkit-transition: height 0.12s ease-in-out;
+}
+.viewFramework-sidebar .sidebar-nav .nav-item {
+    position: relative;
+
+}
+.viewFramework-sidebar .sidebar-nav li a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    padding-left: 42px;
+}
+.viewFramework-sidebar .sidebar-nav li a:hover{
+    background:#37424f;
+}
+.viewFramework-sidebar .sidebar-nav .nav-title {
+    float: left;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 130px;
+}
+.viewFramework-sidebar .sidebar-nav li.active a {
+    background: #0099cc;
+}

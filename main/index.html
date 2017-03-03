@@ -1,0 +1,285 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="./js/jquery/jquery.min.js"></script>
+		<meta name="description" content="软件所">
+		<style type="text/css">
+			*{margin: 0;padding:0;}
+			.container{
+				width:100%;
+				height: 100%;
+				padding-top:60px;
+			}
+			.logo{
+				margin-left:270px;
+			}
+			.h_v_center{
+				position: relative;
+				width: 100%;
+
+				display: -webkit-box; /*使用CSS3的盒模型之流式布局*/
+				display:-ms-flexbox;
+				display: -moz-box;
+				display: box;
+				
+				-webkit-box-pack:center; /*定义盒模型内部元素在水平方向上居于中间位置*/
+				-moz-box-pack:center;
+				-o-box-pack:center;
+				-ms-box-pack:center;
+				box-pack:center;
+
+				-webkit-box-align:center; /*定义盒模型内部元素在垂直方向上居于中间位置*/
+				-moz-box-align:center;
+				-o-box-align:center;
+				-ms-box-align:center;
+				box-align:center;
+			}
+			
+			.h_v_center.chac{
+				height: 9%;
+			}
+			.h_v_center.chac1{
+				height: 9%;
+			}
+			.h_v_center.chac2{
+				height: 9%;
+			}
+			.h_v_center.chac3{
+				height: 9%;
+			}
+			
+			.h_v_center.sub{
+				height: 30%;
+			}
+			
+			.photoview{
+				position: relative;
+				background-color:#f2eada;
+				margin: 5px;padding:5px 5px 5px 5px;
+				text-align: center;
+				font-size:20px;
+				box-shadow:.2em .2em .8em #130c0e; /*给照片添加阴影效果，富有立体感*/
+			}
+			.domainimage{
+				margin-left:40px;
+				margin-right:40px;
+				font-size: 16px;
+				color: #39c8e2;
+			}
+			.subdomains{
+				position: relative;
+				margin: 5px ;padding:5px 5px 5px 5px;
+				text-align: center;
+				font-size:20px;
+				-webkit-box-align:center; /*定义盒模型内部元素在垂直方向上居于中间位置*/
+				-moz-box-align:center;
+				-o-box-align:center;
+				-ms-box-align:center;
+				box-align:center;
+			}
+			
+			@-webkit-keyframes rainbow {
+			   0% { width: 140px; 
+				height: 140px; }
+			  50% { 
+					 width: 150px; 
+				height: 150px;}
+			  100% { width: 140px; 
+				height: 140px; }
+			}
+			@keyframes rainbow {
+			  0% { width: 140px; 
+				height: 140px; }
+			  50% { 
+					 width: 150px; 
+				height: 150px;}
+			  100% { width: 140px; 
+				height: 140px; }
+			}
+			img.subphoto:hover{
+				-webkit-animation: 1s rainbow infinite ; 
+				animation: 1s rainbow infinite;
+			} 
+			img.subphoto:active {
+				animation-play-state:paused;
+				-webkit-play-state:paused;
+				-webkit-box-shadow: 0 0 15px #f3d42e;
+				box-shadow: 0 0 15px #f3d42e;
+			}
+			.round_photo{
+				width:140px;
+				height:140px;
+				border:1px solid #ddddde;
+				-ms-border-radius: 70px;
+				-moz-border-radius: 70px;
+				-webkit-border-radius: 70px;
+				border-radius:70px;
+				position:relative;
+			}
+			.vertical {
+				height: 100px;/*元素的高度*/
+				width: 960px;
+				position: absolute;
+				top: 30%;/*元素的顶部边界离父元素的的位置是父元素高度的一半*/
+				left: 50%;
+				margin-top: -50px;/*设置元素顶边负边距，大小为元素高度的一半*/
+				margin-left: -260px;
+			}
+			.vertical2 {
+				height: 15px;/*元素的高度*/
+				width: 960px;
+				position: absolute;
+				top: 50%;/*元素的顶部边界离父元素的的位置是父元素高度的一半*/
+				left: 49.25%;
+				
+				margin-left: -260px;
+			}
+			.vertical1 {
+				height: 200px;/*元素的高度*/
+				width: 960px;
+				position: absolute;
+				top: 55%;/*元素的顶部边界离父元素的的位置是父元素高度的一半*/
+				left: 47%;
+				margin-top: 0px;/*设置元素顶边负边距，大小为元素高度的一半*/
+				margin-left: -380px;
+				background-image:url("./images/staffimage.png");
+				background-repeat: no-repeat;
+			}
+			.div-a{ position:absolute;left:43px;top:140px;}
+			.frontcolor {
+    			font-size: 16px;
+    			color: #6d8346;
+    		}
+		</style>
+	</head>
+	<body background="./images/background.gif">	
+		<div class="container">
+			<div id="logo" class="logo">
+			    <strong class="frontcolor" style="font-size: 36px;color:green">软件所</strong>
+			</div>
+		<div id="domainimage" class="h_v_center sub">
+				<div  class="subdomains">
+					<div  class="domainimage">
+						<a  href="./doc">
+							<img src="./images/doc.png" class="round_photo subphoto"  >
+						</a>
+					</div>
+				</div>
+				<div  class="subdomains">
+					<div  class="domainimage">
+						<a  href="https://10.84.130.86/mantis">
+							<img src="./images/mantis_logo.png" class="round_photo subphoto" >
+						</a>
+					</div>
+				</div>
+				<div  class="subdomains">
+					<div  class="domainimage">
+						<a  href="./swd">
+							<img src="./images/swd_logo.png" class="round_photo subphoto" >
+						</a>
+					</div>
+				</div>
+		</div>
+		<div  id="domainname" class="h_v_center chac" style="margin-top:-30px;margin-bottom:40px">
+				<div  class="subdomains" style="width:220px">
+					<strong class="frontcolor" >文档管理</strong>
+				</div>
+				<div  class="subdomains" style="width:220px">
+					<strong class="frontcolor">mantis</strong>					
+				</div>
+				<div  class="subdomains" style="width:220px">
+					<strong class="frontcolor">信息发布</strong>
+				</div>
+		</div>
+		<div id="staffimage"></div>
+		<div id="photo_wall1" class="h_v_center chac1">
+			
+		</div>
+		<div id="photo_wall2" class="h_v_center chac2">
+			
+		</div>
+		<div id="photo_wall3" class="h_v_center chac3">
+			
+		</div>
+		
+		</div>
+			<script>
+				if( !!!(document.all && navigator.userAgent.indexOf('Opera') === -1) ) {
+					var myrandom = function(lowerlimit,ceiling){
+						return parseInt(Math.random()*(ceiling-lowerlimit+1)+lowerlimit);
+					}
+					
+					var transformorigin = new Array("right bottom","right top","right bottom","left top");
+					var photo_wall = "";
+					for( var i = 0; i < 12; i++ ){
+						photo_wall += 
+							"<div id='photo"+i+"' >"+
+								"<div  class='photoview' >"+
+									"<img  src='./images/sw_st"+(i+2)+".png' width='40' height='60'>"+
+								"</div>"+
+							"</div>";										
+					}
+					$("#photo_wall1").html(photo_wall);
+					
+					photo_wall = "";
+					for( var i = 12; i < 25; i++ ){
+						photo_wall += 
+							"<div id='photo"+i+"' >"+
+								"<div  class='photoview' >"+
+									"<img  src='./images/sw_st"+(i+2)+".png' width='40' height='60'>"+
+								"</div>"+
+							"</div>";										
+					}
+					$("#photo_wall2").html(photo_wall);
+					
+					photo_wall = "";
+					for( var i = 25; i < 38; i++ ){
+						photo_wall += 
+							"<div id='photo"+i+"' >"+
+								"<div  class='photoview' >"+
+									"<img  src='./images/sw_st"+(i+2)+".png' width='40' height='60'>"+
+								"</div>"+
+							"</div>";										
+					}
+					$("#photo_wall3").html(photo_wall);
+					
+					for( var i = 0; i < 38; i++ ){
+						var divStyle = document.querySelector('#photo'+i).style; 
+						divStyle.transformorigin = transformorigin[myrandom(0,3)];
+						divStyle.weikitTransformorigin = transformorigin[myrandom(0,3)];
+						divStyle.moztransformorigin = transformorigin[myrandom(0,3)];
+						divStyle.otransformorigin = transformorigin[myrandom(0,3)];
+						divStyle.mstransformorigin = transformorigin[myrandom(0,3)]
+						divStyle.transform = "rotate("+myrandom(-40,40)+"deg)";
+						divStyle.webkitTransform = "rotate("+myrandom(-40,40)+"deg)";
+						divStyle.moztransform = "rotate("+myrandom(-40,40)+"deg)";
+						divStyle.otransform = "rotate("+myrandom(-40,40)+"deg)";
+						divStyle.mstransform = "rotate("+myrandom(-40,40)+"deg)";
+					}
+				
+				}else{
+					var domainimage = document.getElementById("domainimage");
+					var domainname = document.getElementById("domainname");
+					domainimage.className ="vertical";	
+					var cc = "<a  href='http://10.118.1.65/doc' style='float:left;margin-left:-50px'> " +
+							 "<img src='./images/doc.png' class='round_photo '  ></a>" +
+							 "<a  href='https://10.84.130.86/mantis' style='float:left;margin-left:100px;margin-right:100px'>"+
+							 "<img src='./images/mantis_logo.png' class='round_photo ' ></a>" +
+							 "<a  href='http://10.118.1.65/swd' style='float:left;margin-right:-50px'>" +
+							 "<img src='./images/swd_logo.png' class='round_photo ' ></a>";
+					domainimage.innerHTML  = cc;
+					var dd = "<strong class='frontcolor' style='width:240px'>文档管理</strong> " +
+							 "<strong class='frontcolor' style='width:240px'>mantis</strong>	" +
+							 "<strong class='frontcolor' style='width:240px'>信息发布</strong>";
+					domainname.innerHTML  = dd;
+					domainname.className ="vertical2";	
+					var staffimage = document.getElementById("staffimage");
+					staffimage.className ="vertical1";
+					//q1.innerHTML  = "";
+				}
+				
+			</script>	
+			
+		</div>
+	</body>
+</html>

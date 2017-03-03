@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+	<LinearLayout 
+        android:id="@+id/add_inventory_layout"
+        android:layout_width="fill_parent"
+	    android:layout_height="50dp"
+	    android:orientation="horizontal"
+	    android:visibility="gone"
+    >
+
+    <EditText
+        android:id="@+id/newinfoinventory"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="match_parent"
+        android:hint="@string/prompt_input"
+     />
+    
+    <ImageButton 
+        android:id="@+id/imagebuttoninventory" 
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+    	android:src="@drawable/ic_action_ok"
+    	android:scaleType="centerInside"
+    	android:onClick="ok_Button"
+    	android:contentDescription="@string/post_new_info"
+    />
+	</LinearLayout>
+	
+	<LinearLayout 
+        android:id="@+id/add_myobject_layout"
+        android:layout_width="fill_parent"
+	    android:layout_height="50dp"
+	    android:orientation="horizontal"
+	    android:layout_margin="5dp"
+	    android:visibility="gone"
+    >
+
+    <EditText
+        android:id="@+id/newinfomyobject"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="match_parent"
+        android:hint="@string/prompt_input"
+     />
+
+    <ImageView 
+        android:id="@+id/imageview"
+        android:layout_height="match_parent"
+        android:layout_width="70dp"
+        android:scaleType="fitCenter"
+        android:onClick="take_Photo"
+        android:src="@drawable/camera"
+        android:contentDescription="@string/take_picture"
+    />
+    <ImageButton 
+        android:id="@+id/imagebuttonmyobject" 
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+    	android:src="@drawable/ic_action_ok"
+    	android:scaleType="centerInside"
+    	android:onClick="ok_Button"
+    	android:contentDescription="@string/post_new_info"
+    />
+	
+	</LinearLayout>
+	
+</LinearLayout>
