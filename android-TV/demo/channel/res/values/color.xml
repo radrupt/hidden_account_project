@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_list_select">#ef000000</color>
+    <color name="color_list_focus">#ef000000</color>
+    <color name="color_resource_focus">#e3252356</color>
+</resources>

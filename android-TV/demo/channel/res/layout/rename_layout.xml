@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rename_popup"
+    android:layout_width="600dp"
+    android:layout_height="55dp"
+    android:orientation="vertical"
+    android:background="#b5555555"
+    >
+
+     <EditText
+        android:id="@+id/newname"
+        android:layout_width="300dp"
+        android:textSize="25sp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+     />
+    
+</LinearLayout>

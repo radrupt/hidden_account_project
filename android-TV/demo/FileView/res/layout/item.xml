@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent" android:layout_height="75dp"  
+    android:orientation="horizontal"
+    > 
+    
+    <ImageView  
+        android:id="@+id/img"  
+        android:layout_height="fill_parent"  
+        android:layout_width="75dp"  
+        android:layout_alignParentLeft="true"
+         />  
+    
+    <TextView 
+    	android:id="@+id/text"  
+        android:layout_height="fill_parent"  
+        android:layout_width="500dp"  
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="35sp"
+        android:singleLine="true"
+    />
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:gravity="end">"
+	    <TextView 
+	    	android:id="@+id/lastmodified"  
+	        android:layout_height="fill_parent"  
+	        android:layout_width="wrap_content"  
+	        android:layout_marginEnd="100dp"
+	        android:layout_marginRight="100dp"
+	        android:layout_marginTop="30dp"
+	        android:textSize="20sp"
+	    />
+	    
+	    <TextView 
+	    	android:id="@+id/file_size"  
+	        android:layout_height="fill_parent"  
+	        android:layout_width="100dp"  
+	        android:layout_marginEnd="100dp"
+	        android:layout_marginRight="100dp"
+	        android:layout_marginTop="30dp"
+	        android:textSize="20sp"
+	        android:singleLine="true"
+	       	android:gravity="end"
+	    />
+    </LinearLayout>
+   	
+</LinearLayout >

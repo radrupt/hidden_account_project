@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.foldermanager.MainActivity" >
+
+    <item
+        android:id="@+id/sort_setting"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/sort_settings">
+        <menu >
+	      <item android:id="@+id/sort_file_type"
+	          android:title="@string/sort_file_types"/>
+	      <item android:id="@+id/sort_time"
+	          android:title="@string/sort_times"/>
+	 	</menu>
+    </item>
+    
+
+</menu>

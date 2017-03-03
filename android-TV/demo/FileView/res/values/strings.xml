@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FileView</string>
+    <string name="file_view_title">文件浏览</string>
+    <string name="sort_settings">排序方式</string>
+	<string name="sort_file_types">类型</string>
+	<string name="sort_times">日期</string>
+	<string name="sort">排序</string>
+</resources>
