@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://video.pandawork.net/upload/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UpLoadService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_UpLoadService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://video.pandawork.net/upload/" location="http://video.net:9999/upLoadService/metadata?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_UpLoadService" type="i0:UpLoadService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_UpLoadService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://video.pandawork.net/upload/UpLoadService/UploadFile" style="document" />
+      <wsdl:input name="FileUploadMessage">
+        <soap:header message="i0:FileUploadMessage_Headers" part="FileName" use="literal" />
+        <soap:header message="i0:FileUploadMessage_Headers" part="FileSize" use="literal" />
+        <soap:header message="i0:FileUploadMessage_Headers" part="FileUniqueID" use="literal" />
+        <soap:header message="i0:FileUploadMessage_Headers" part="SavePath" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetUploadFileInfo">
+      <soap:operation soapAction="http://video.pandawork.net/upload/UpLoadService/GetUploadFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UpLoadService">
+    <wsdl:port name="BasicHttpBinding_UpLoadService" binding="tns:BasicHttpBinding_UpLoadService">
+      <soap:address location="http://video.net:9999/upLoadService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

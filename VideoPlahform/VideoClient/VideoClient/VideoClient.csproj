@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoClient</RootNamespace>
+    <AssemblyName>VideoClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\..\..\..\wc\VideoClient\VideoClient\dll\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF45, Version=4.2.30.23246, Culture=neutral, PublicKeyToken=0e27b6f8be9b2ef7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\net45\GalaSoft.MvvmLight.Extras.WPF45.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF45, Version=4.2.30.23246, Culture=neutral, PublicKeyToken=eabbf6a5f5af5004, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\net45\GalaSoft.MvvmLight.WPF45.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPF.DazzleUI2">
+      <HintPath>dll\WPF.DazzleUI2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LenBtnControl.xaml.cs">
+      <DependentUpon>LenBtnControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pandawork\Common\Util\CodeUtil.cs" />
+    <Compile Include="Pandawork\Common\Util\NowToDo.cs" />
+    <Compile Include="Pandawork\Cookie.cs" />
+    <Compile Include="Pandawork\DownloadMap.cs" />
+    <Compile Include="Service References\DeviceServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DownLoadServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MapServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RegionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UpLoadServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CallDLL\impls\HieClient_CommonUtilies.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_DeleteUserForceCB_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_DeviceConfig_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_DeviceRegister_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_FileDownload_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_FileUpload_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_HistoryStream_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_Init_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_Matrix_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_OtherOp_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_PtzControl_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_Query_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_RealStream_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_RemoteControl_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_SDKAttribute_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_StreamControl_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_SubscribeEvent_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_TransparentChannel_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_UnSubscribeEvent_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_UserLogin_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_UserLogout_Impl.cs" />
+    <Compile Include="Service\CallDLL\impls\HieClient_VoiceStream_Impl.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_DeleteUserForceCB.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_DeviceConfig.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_DeviceRegister.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_FileDownload.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_FileUpload.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_HistoryStream.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_Init.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_Matrix.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_OtherOp.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_PtzControl.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_Query.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_RealStream.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_RemoteControl.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_SDKAttribute.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_StreamControl.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_SubscribeEvent.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_TransparentChannel.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_UnSubscribeEvent.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_UserLogin.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_UserLogout.cs" />
+    <Compile Include="Service\CallDLL\interfaces\Client_VoiceStream.cs" />
+    <Compile Include="Service\CallDLL\Utilies.cs" />
+    <Compile Include="Service\Constants\CConstants.cs" />
+    <Compile Include="Service\Constants\ErrorConstants.cs" />
+    <Compile Include="Service\DeviceBuilder\AbstractDeviceBuilder.cs" />
+    <Compile Include="Service\DeviceBuilder\DeviceDirector.cs" />
+    <Compile Include="Service\DeviceBuilder\impls\Hie_MGTC26_Builder.cs" />
+    <Compile Include="Service\Device\AbstractDevice.cs" />
+    <Compile Include="Service\Device\impls\Hie_MGTC26_Device.cs" />
+    <Compile Include="Service\Reg\impls\common\CommonUserEntityImpl.cs" />
+    <Compile Include="Service\Reg\impls\hie\CheckUserLoginImpl.cs" />
+    <Compile Include="Service\Reg\interfaces\CheckUserLogin.cs" />
+    <Compile Include="Service\Reg\interfaces\CommonUserEntity.cs" />
+    <Compile Include="Service\Reg\Utilis\Base.cs" />
+    <Compile Include="Service\tools\DeviceProbe.cs" />
+    <Compile Include="Service\tools\DeviceTypecs.cs" />
+    <Compile Include="Service\tools\PlayRecoder.cs" />
+    <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\DeviceViewModel.cs" />
+    <Compile Include="ViewModel\MapViewModel.cs" />
+    <Compile Include="ViewModel\RegionManageViewModel.cs" />
+    <Compile Include="ViewModel\RegionViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
+    <Compile Include="View\Device\AddDeviceView.xaml.cs">
+      <DependentUpon>AddDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\CuriserAddPreset.xaml.cs">
+      <DependentUpon>CuriserAddPreset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\ProbeDeviceView.xaml.cs">
+      <DependentUpon>ProbeDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\PtzControlView.xaml.cs">
+      <DependentUpon>PtzControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\RegionDeviceView.xaml.cs">
+      <DependentUpon>RegionDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\RegionTreeView.xaml.cs">
+      <DependentUpon>RegionTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\RegionView.xaml.cs">
+      <DependentUpon>RegionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Device\RightOpControl.xaml.cs">
+      <DependentUpon>RightOpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Group\GroupView.xaml.cs">
+      <DependentUpon>GroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Group\PlayerGroupView.xaml.cs">
+      <DependentUpon>PlayerGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Map\AddDeviceDialog.xaml.cs">
+      <DependentUpon>AddDeviceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Map\AddMapDialog.xaml.cs">
+      <DependentUpon>AddMapDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Map\MapImgView.xaml.cs">
+      <DependentUpon>MapImgView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Map\MapTreeView.xaml.cs">
+      <DependentUpon>MapTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Map\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\OpUserDialog.xaml.cs">
+      <DependentUpon>OpUserDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\UserAccView.xaml.cs">
+      <DependentUpon>UserAccView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\UserBaseView.xaml.cs">
+      <DependentUpon>UserBaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Video\PlayerView.xaml.cs">
+      <DependentUpon>PlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Video\VideoView.xaml.cs">
+      <DependentUpon>VideoView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LenBtnControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="StyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModelDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Device\AddDeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Device\CuriserAddPreset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Device\ProbeDeviceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Device\PtzControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Device\RegionDeviceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Device\RegionTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Device\RegionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Device\RightOpControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Group\GroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Group\PlayerGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Map\AddDeviceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Map\AddMapDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Map\MapImgView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Map\MapTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Map\MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TreeResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\User\OpUserDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\User\UserAccView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\User\UserBaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\User\UserView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Video\PlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Video\VideoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.dto.DeviceDTO.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.dto.LogDTO.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.dto.MapDTO.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.dto.RegionDTO.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.entity.Device.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.entity.DeviceModel.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.entity.Map.datasource" />
+    <None Include="Properties\DataSources\VideoCommon.com.pandawork.common.entity.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\DeviceServiceReference\DeviceService1.wsdl" />
+    <None Include="Service References\DeviceServiceReference\metadata1.wsdl" />
+    <None Include="Service References\DeviceServiceReference\metadata4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceServiceReference\metadata41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceServiceReference\metadata42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceServiceReference\metadata43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DownLoadServiceReference\DownLoadService1.wsdl" />
+    <None Include="Service References\DownLoadServiceReference\metadata1.wsdl" />
+    <None Include="Service References\DownLoadServiceReference\metadata3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DownLoadServiceReference\metadata31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DownLoadServiceReference\metadata32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\MapService1.wsdl" />
+    <None Include="Service References\MapServiceReference\metadata1.wsdl" />
+    <None Include="Service References\MapServiceReference\metadata5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\metadata51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\metadata52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\metadata53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MapServiceReference\metadata54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionServiceReference\metadata1.wsdl" />
+    <None Include="Service References\RegionServiceReference\metadata4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionServiceReference\metadata41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionServiceReference\metadata42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionServiceReference\metadata43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionServiceReference\RegionService1.wsdl" />
+    <None Include="Service References\UpLoadServiceReference\metadata1.wsdl" />
+    <None Include="Service References\UpLoadServiceReference\metadata4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UpLoadServiceReference\metadata41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UpLoadServiceReference\metadata42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UpLoadServiceReference\metadata43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UpLoadServiceReference\UpLoadService1.wsdl" />
+    <None Include="Service References\UserServiceReference\metadata1.wsdl" />
+    <None Include="Service References\UserServiceReference\metadata3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\metadata31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\metadata32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\UserService1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BlendEmbeddedFont Include="Fonts\msyh.ttc">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\msyhbd.ttc">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Candara.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Candarab.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Candarai.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Candaraz.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\ahronbd.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <Resource Include="Skin\img\area_botton_bg.png" />
+    <Resource Include="Skin\img\area_on_bg.png" />
+    <Resource Include="Skin\img\btn_none_bg.png" />
+    <Resource Include="Skin\img\btn_on_bg.png" />
+    <Resource Include="Skin\img\close.png" />
+    <Resource Include="Skin\img\device.png" />
+    <Resource Include="Skin\img\ico_on_bg.png" />
+    <Resource Include="Skin\img\logo.png" />
+    <Resource Include="Skin\img\map_ico.png" />
+    <Resource Include="Skin\img\max.png" />
+    <Resource Include="Skin\img\min.png" />
+    <Resource Include="Skin\img\tab_btn_bg.png" />
+    <Resource Include="Skin\img\top_bg.png" />
+    <Resource Include="Skin\img\top_small.jpg" />
+    <Resource Include="Skin\img\tree_area_bg.png" />
+    <Resource Include="Skin\img\tree_bg.png" />
+    <Resource Include="Skin\img\tree_on_bg.png" />
+    <Resource Include="Skin\img\tree_root_bg.png" />
+    <Resource Include="Skin\img\video.png" />
+    <Resource Include="Skin\img\videos_ico.png" />
+    <Resource Include="Skin\img\video_ico.png" />
+    <Resource Include="Skin\img\区域设备区底部选项卡选中状态背景备用.png" />
+    <Resource Include="Skin\img\图标-选中状态背景2%281和2结合使用%29.png" />
+    <Resource Include="Skin\img\视频区域初始状态.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Skin\img\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\top_right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VideoServer\VideoCommon\VideoCommon.csproj">
+      <Project>{72baf216-628e-4725-adf7-2c9567050bde}</Project>
+      <Name>VideoCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VideoServer\VideoContract\VideoContract.csproj">
+      <Project>{da7da12f-4633-4b2c-b201-7cd4e86ea7e0}</Project>
+      <Name>VideoContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceConfigLib\HieCiULib.csproj">
+      <Project>{4c3c3a39-37fc-4e6d-8ed4-659d4448d94f}</Project>
+      <Name>HieCiULib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hie_MP4Player\Hie_MP4Player.csproj">
+      <Project>{e7d94a37-8a63-478b-a5fa-e648fafe801c}</Project>
+      <Name>Hie_MP4Player</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\login_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\login_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\button\中按钮_普通.png" />
+    <Resource Include="Skin\img\button\中按钮_点击.png" />
+    <Resource Include="Skin\img\button\中按钮_选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\button\圆按钮_普通.png" />
+    <Resource Include="Skin\img\button\圆按钮_点击.png" />
+    <Resource Include="Skin\img\button\圆按钮_选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\direction\上.png" />
+    <Resource Include="Skin\img\direction\下.png" />
+    <Resource Include="Skin\img\direction\右.png" />
+    <Resource Include="Skin\img\direction\左.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\button\短按钮_普通.png" />
+    <Resource Include="Skin\img\button\短按钮_点击.png" />
+    <Resource Include="Skin\img\button\短按钮_选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\camera_arg\光圈放大.png" />
+    <Resource Include="Skin\img\camera_arg\光圈缩小.png" />
+    <Resource Include="Skin\img\camera_arg\减.png" />
+    <Resource Include="Skin\img\camera_arg\加.png" />
+    <Resource Include="Skin\img\camera_arg\焦点前调.png" />
+    <Resource Include="Skin\img\camera_arg\焦点后调.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\button\长按钮_普通.png" />
+    <Resource Include="Skin\img\button\长按钮_点击.png" />
+    <Resource Include="Skin\img\button\长按钮_选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\dialog_title_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\dialog_content_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MapServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DeviceServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegionServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegionServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RegionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UpLoadServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UpLoadServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UpLoadServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownLoadServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownLoadServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownLoadServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\video\快进.png" />
+    <Resource Include="Skin\img\video\快退.png" />
+    <Resource Include="Skin\img\video\播放.png" />
+    <Resource Include="Skin\img\video\播放器底边装饰.png" />
+    <Resource Include="Skin\img\video\播放器滚动条.png" />
+    <Resource Include="Skin\img\video\暂停.png" />
+    <Resource Include="Skin\img\video\视频底边.gif" />
+    <Resource Include="Skin\img\video\视频播放窗口.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\rightOpTab\云台操作底边.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\rightOpTab\操作tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Skin\img\playerCount\fourCount.png" />
+    <Resource Include="Skin\img\playerCount\fourSelected.png" />
+    <Resource Include="Skin\img\playerCount\nineCount.png" />
+    <Resource Include="Skin\img\playerCount\nineSelected.png" />
+    <Resource Include="Skin\img\playerCount\oneCount.png" />
+    <Resource Include="Skin\img\playerCount\oneSelected.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

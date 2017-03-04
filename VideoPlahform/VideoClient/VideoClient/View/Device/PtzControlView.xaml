@@ -1,0 +1,757 @@
+﻿<UserControl x:Class="VideoClient.View.Device.PtzControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="250"
+             DataContext="{DynamicResource ResourceKey=deviceViewModel}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+            <Grid>
+                <Image HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20" Source="/VideoClient;component/Skin/img/direction/上.png"/>
+            </Grid>
+        </DataTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate4" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0,0,-3.333,-5.97">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="21.953" VerticalAlignment="Top" Width="52.833" Source="/VideoClient;component/Skin/img/button/短按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_选择.png"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_点击.png"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="开启" Margin="0"/>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="ToggleButtonStyle1" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="templateRoot" BorderBrush="#FFACACAC" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="10">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                    <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border x:Name="splitBorder" BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="True" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                                <Path x:Name="Arrow" Data="F1M0,0L2.667,2.66665 5.3334,0 5.3334,-1.78168 2.6667,0.88501 0,-1.78168 0,0z" Fill="#FF606060" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFABADB3"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="Transparent"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Fill" TargetName="Arrow" Value="Black"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFECF4FC" Offset="0"/>
+                                            <GradientStop Color="#FFDCECFC" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF7EB4EA"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF7EB4EA"/>
+                                <Setter Property="Background" TargetName="splitBorder">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFEBF4FC" Offset="0"/>
+                                            <GradientStop Color="#FFDCECFC" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="#FF7EB4EA"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Arrow" Value="Black"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFDAECFC" Offset="0"/>
+                                            <GradientStop Color="#FFC4E0FC" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF569DE5"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF569DE5"/>
+                                <Setter Property="Background" TargetName="splitBorder">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFDAEBFC" Offset="0"/>
+                                            <GradientStop Color="#FFC4E0FC" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="#FF569DE5"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Fill" TargetName="Arrow" Value="#FFBFBFBF"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="#FFF0F0F0"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFD9D9D9"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFBFBFBF"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="Transparent"/>
+                            </MultiDataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ButtonControlTemplate6" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0,0,-3.333,-5.97">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="21.953" VerticalAlignment="Top" Width="52.833" Source="/VideoClient;component/Skin/img/button/短按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_选择.png"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_点击.png"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="设置" Margin="0"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate7" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0,0,-3.333,-5.97">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="21.953" VerticalAlignment="Top" Width="52.833" Source="/VideoClient;component/Skin/img/button/短按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_选择.png"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_点击.png"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="转到" Margin="0"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate8" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0,0,-3.333,-5.97">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="21.953" VerticalAlignment="Top" Width="52.833" Source="/VideoClient;component/Skin/img/button/短按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_选择.png"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_点击.png"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="清除" Margin="0"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate9" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0,0,-3.333,-5.97">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="21.953" VerticalAlignment="Top" Width="52.833" Source="/VideoClient;component/Skin/img/button/短按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_选择.png"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="21.953" Opacity="0" VerticalAlignment="Top" Width="54.333" Source="/VideoClient;component/Skin/img/button/短按钮_点击.png"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="关闭" Margin="0"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate10" TargetType="{x:Type Button}">
+            <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Opacity="1" Margin="0.75,0,-0.25,4.547">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Viewbox.Stretch)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Stretch.Uniform}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image1">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.VerticalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.HorizontalContentAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="label">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="image2">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static VerticalAlignment.Center}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="22.453" VerticalAlignment="Top" Width="76.5" Source="/VideoClient;component/Skin/img/button/长按钮_普通.png" Margin="0"/>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="22.453" Opacity="0" VerticalAlignment="Top" Width="76.5" Source="/VideoClient;component/Skin/img/button/长按钮_选择.png" Margin="0"/>
+                <Image x:Name="image2" HorizontalAlignment="Left" Height="22.453" Opacity="0" VerticalAlignment="Top" Width="76.5" Source="/VideoClient;component/Skin/img/button/长按钮_点击.png" Margin="0"/>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Top" Content="加入巡航"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid Height="505.2" Background="#FFF1F1F1">
+        <Button Name="buttonUp"   Width="40" Height="40" Margin="67.416,18.6,142.583,446.6" Template="{DynamicResource CycleTopButtonControlTemplate}"/>
+        <Button Name="buttonLeft" Width="40" Height="40" Margin="33.75,51.6,176.25,413.6" Template="{DynamicResource CycleLeftButtonControlTemplate}"/>
+        <Button Name="buttonRight" Width="40" Height="40" Margin="102,51.6,108,413.6" Template="{DynamicResource CycleRightButtonControlTemplate}"/>
+        <Button Name="buttonDown" Width="40" Height="40" Margin="67.416,89.6,142.583,375.6" Template="{DynamicResource CycleBelowButtonControlTemplate}"/>
+        <Label Content="缩放" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,141,0,0"/>
+        <Button Name="buttonZoomOut" Width="40" Height="40" Margin="111,132,99,333.2" Template="{DynamicResource CycleGqplusButtonControlTemplate}"/>
+        <Button Name="buttonZoomIn" Width="40" Height="40" Margin="28,132,182,333.2" Template="{DynamicResource CycleGqlowerButtonControlTemplate}"/>
+        <Label Content="光圈" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,187,0,0"/>
+        <Button Name="buttonApertureUp" Width="40" Height="40" Margin="28,180,182,285.2" Template="{DynamicResource CycleJjplusButtonControlTemplate}"/>
+        <Button Name="buttonApertureDown" Width="40" Height="40" Margin="111,180,99,285.2" Template="{DynamicResource CycleJjlowerButtonControlTemplate}"/>
+        <Label Content="聚焦" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,245,0,0"/>
+        <Button Name="buttonFocusFar" Width="40" Height="40" Margin="28,238,182,227.2" Template="{DynamicResource CycleTxplusButtonControlTemplate}"/>
+        <Button Name="buttonFocusNear" Width="40" Height="40" Margin="111,238,99,227.2" Template="{DynamicResource CycleTxlowerButtonControlTemplate}"/>
+        <Button Name="buttonAuxiEquipOpen" Command="{Binding OpenAuxiEquipCommand}" CommandParameter="{Binding ElementName=comboBoxAuxiEquip}" Margin="88,311,111,174.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate4}"/>
+        <Button x:Name="buttonAuxiEquipClose" Command="{Binding CloseAuxiEquipCommand}" CommandParameter="{Binding ElementName=AuxiEquipComboBox}" Margin="139,311,60,174.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate9}"/>
+        <Button x:Name="buttonPresetSet" Command="{Binding PresetSetCommand}" CommandParameter="{Binding ElementName=comboBoxPreset}" Height="30" Margin="88,349,111,126.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate6}"/>
+        <Button x:Name="buttonPresetCall" Command="{Binding PresetCallCommand}" CommandParameter="{Binding ElementName=comboBoxPreset}" Height="30" Margin="139,349,60,126.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate7}"/>
+        <Button x:Name="buttonPresetClear" Command="{Binding PresetClearCommand}"  CommandParameter="{Binding ElementName=comboBoxPreset}" Height="30" Margin="189,349,10,126.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate8}"/>
+        <Button x:Name="buttonCuriserAddPreset" Command="{Binding CuriserAddPresetCommand}" CommandParameter="{Binding ElementName=comboBoxCuriser}" Margin="88,380,85,93.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate10}"/>
+        <Button x:Name="buttonCuriserSetStart" Command="{Binding CuriserRunStartCommand}" CommandParameter="{Binding ElementName=comboBoxCuriser}" Margin="88,406,111,79.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate4}"/>
+        <Button x:Name="buttonCuriserSetStop" Command="{Binding CuriserRunStopCommand}" CommandParameter="{Binding ElementName=comboBoxCuriser}" Margin="139,406,60,79.2" Style="{DynamicResource ButtonStyle1}" Template="{DynamicResource ButtonControlTemplate9}"/>
+        <ComboBox x:Name="comboBoxAuxiEquip" Loaded="FuZuComboBox_Loaded" SelectionChanged="FuZuComboBox_SelectionChanged" HorizontalAlignment="Left" Margin="25,311,0,0" VerticalAlignment="Top" Width="58" Height="20" Template="{DynamicResource ComboBoxControlTemplate1}" Style="{DynamicResource dialogComboBox}"/>
+        <ComboBox x:Name="comboBoxPreset" Loaded="YuZhiDianComboBox_Loaded" SelectionChanged="YuZhiDianComboBox_SelectionChanged" HorizontalAlignment="Left" Height="20" Margin="25,356,0,0" VerticalAlignment="Top" Width="58" Style="{DynamicResource dialogComboBox}" Template="{DynamicResource ComboBoxControlTemplate1}"/>
+        <ComboBox x:Name="comboBoxCuriser" Loaded="YuZhiDianComboBox_Loaded" SelectionChanged="YuZhiDianComboBox_SelectionChanged" HorizontalAlignment="Left" Height="20" Margin="25,406,0,0" VerticalAlignment="Top" Width="58" Style="{DynamicResource dialogComboBox}" Template="{DynamicResource ComboBoxControlTemplate1}"/>
+        <Slider x:Name="rotationSpeed" Value="{Binding RotationSpeed}" Minimum="1" Maximum="10" SmallChange="1" LargeChange="10" HorizontalAlignment="Left" Margin="183,21,0,0" VerticalAlignment="Top" Orientation="Vertical" Height="106"/>
+        <Label x:Name="旋转速度" Content="转速: " HorizontalAlignment="Left" Margin="159,132,0,0" VerticalAlignment="Top" Height="24" Width="37"/>
+        <TextBlock Text="{Binding ElementName=rotationSpeed,Path=Value}" HorizontalAlignment="Left" Margin="201,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="33"/>
+        <Label Content="辅助设备" HorizontalAlignment="Left" Margin="25,286,0,0" VerticalAlignment="Top"/>
+        <Label Content="预置点" HorizontalAlignment="Left" Margin="25,331,0,0" VerticalAlignment="Top"/>
+        <Label Content="巡  航" HorizontalAlignment="Left" Margin="25,381,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

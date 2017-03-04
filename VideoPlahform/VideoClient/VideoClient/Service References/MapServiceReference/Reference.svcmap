@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="878dbf2f-807e-46c3-937d-f612c7664039" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/mapService/metadata?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="metadata5.xsd" MetadataType="Schema" ID="8509aa20-bde9-4152-9a3e-7067ca964f20" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?xsd=xsd3" />
+    <MetadataFile FileName="metadata51.xsd" MetadataType="Schema" ID="c5ad7310-487e-4900-9e2a-6eee68746a34" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="MapService1.wsdl" MetadataType="Wsdl" ID="cd5439cb-6ae6-43dc-8094-e2ceffac2156" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?wsdl" />
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="162eb69b-eaea-40e6-a2b8-56d4070e95f9" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?wsdl=wsdl0" />
+    <MetadataFile FileName="metadata52.xsd" MetadataType="Schema" ID="81c3bee1-7122-4fd6-89b8-820cfb172c0d" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?xsd=xsd4" />
+    <MetadataFile FileName="metadata53.xsd" MetadataType="Schema" ID="150d2097-fc7c-420f-a159-5cfe04039ea4" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?xsd=xsd1" />
+    <MetadataFile FileName="metadata54.xsd" MetadataType="Schema" ID="9336b71b-3e0d-49a7-bd7d-4c07099e8fc2" SourceId="1" SourceUrl="http://video.net:9999/mapService/metadata?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

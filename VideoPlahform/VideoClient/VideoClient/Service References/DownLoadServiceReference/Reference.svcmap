@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4542a3c2-8884-4b65-b3f7-7669a6709cad" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/downLoadService/metadata" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="metadata3.xsd" MetadataType="Schema" ID="4b4c8a8f-1f27-4c0c-9c28-b356357d4417" SourceId="1" SourceUrl="http://video.net:9999/downLoadService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="metadata31.xsd" MetadataType="Schema" ID="5968540c-3537-4d25-9044-734ac8d85835" SourceId="1" SourceUrl="http://video.net:9999/downLoadService/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata32.xsd" MetadataType="Schema" ID="68fe4e37-05b3-4970-8c38-e811a06766d3" SourceId="1" SourceUrl="http://video.net:9999/downLoadService/metadata?xsd=xsd1" />
+    <MetadataFile FileName="DownLoadService1.wsdl" MetadataType="Wsdl" ID="85fcf152-bd35-4c3f-a599-9d60603b8793" SourceId="1" SourceUrl="http://video.net:9999/downLoadService/metadata" />
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="385fd69f-393f-441a-8a64-4b4d35f33e57" SourceId="1" SourceUrl="http://video.net:9999/downLoadService/metadata?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

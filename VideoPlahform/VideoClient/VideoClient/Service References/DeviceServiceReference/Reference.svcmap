@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e252dab1-332a-4a26-9fd7-7e1ee30fbc06" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/deviceService/metadata?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DeviceService1.wsdl" MetadataType="Wsdl" ID="03f49314-9f75-4ad0-9d66-cdff4664b5fc" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?wsdl" />
+    <MetadataFile FileName="metadata4.xsd" MetadataType="Schema" ID="f83d99da-35de-4ffa-b37a-765f84eeca8a" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?xsd=xsd1" />
+    <MetadataFile FileName="metadata41.xsd" MetadataType="Schema" ID="1ff9d318-51fe-4025-9944-0290c4bf7b92" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata42.xsd" MetadataType="Schema" ID="804ea4f4-ee0a-487e-9733-18d2d021506b" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?xsd=xsd3" />
+    <MetadataFile FileName="metadata43.xsd" MetadataType="Schema" ID="a84b9aaf-d2d7-4e1a-bfe0-bb4ec2a1fe72" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="8d06f93f-e5d4-4880-9869-c2c8db5ab37b" SourceId="1" SourceUrl="http://video.net:9999/deviceService/metadata?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

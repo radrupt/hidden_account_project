@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://video.pandawork.net/device/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://video.pandawork.net/device/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://video.pandawork.net/device/Imports">
+      <xsd:import schemaLocation="http://video.net:9999/deviceService/metadata?xsd=xsd0" namespace="http://video.pandawork.net/device/" />
+      <xsd:import schemaLocation="http://video.net:9999/deviceService/metadata?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://video.net:9999/deviceService/metadata?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VideoCommon.com.pandawork.common.entity" />
+      <xsd:import schemaLocation="http://video.net:9999/deviceService/metadata?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VideoCommon.com.pandawork.common.dto" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DeviceService_addDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDevice" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_addDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDeviceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeviceById" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDeviceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeviceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_updateDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateDevice" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_updateDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_delDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:delDevice" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_delDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getAllDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllDevices" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getAllDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDevicesOnMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDevicesOnMap" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDevicesOnMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDevicesOnMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDevicesByRegionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDevicesByRegionId" />
+  </wsdl:message>
+  <wsdl:message name="DeviceService_getDevicesByRegionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDevicesByRegionIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DeviceService">
+    <wsdl:operation name="addDevice">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/addDevice" message="tns:DeviceService_addDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/addDeviceResponse" message="tns:DeviceService_addDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeviceById">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/getDeviceById" message="tns:DeviceService_getDeviceById_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/getDeviceByIdResponse" message="tns:DeviceService_getDeviceById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDevice">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/updateDevice" message="tns:DeviceService_updateDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/updateDeviceResponse" message="tns:DeviceService_updateDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delDevice">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/delDevice" message="tns:DeviceService_delDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/delDeviceResponse" message="tns:DeviceService_delDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDevices">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/getAllDevices" message="tns:DeviceService_getAllDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/getAllDevicesResponse" message="tns:DeviceService_getAllDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDevicesOnMap">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/getDevicesOnMap" message="tns:DeviceService_getDevicesOnMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/getDevicesOnMapResponse" message="tns:DeviceService_getDevicesOnMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDevicesByRegionId">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/device/DeviceService/getDevicesByRegionId" message="tns:DeviceService_getDevicesByRegionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/device/DeviceService/getDevicesByRegionIdResponse" message="tns:DeviceService_getDevicesByRegionId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

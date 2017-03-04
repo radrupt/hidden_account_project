@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClient", "VideoClient\VideoClient.csproj", "{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCommon", "..\VideoServer\VideoCommon\VideoCommon.csproj", "{72BAF216-628E-4725-ADF7-2C9567050BDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoContract", "..\VideoServer\VideoContract\VideoContract.csproj", "{DA7DA12F-4633-4B2C-B201-7CD4E86EA7E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HieClientLib", "HieClientLib\HieClientLib.csproj", "{BE2F2576-E29F-4B93-8CFA-9438EADE26EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hie_MP4Player", "Hie_MP4Player\Hie_MP4Player.csproj", "{E7D94A37-8A63-478B-A5FA-E648FAFE801C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HieCiULib", "DeviceConfigLib\HieCiULib.csproj", "{4C3C3A39-37FC-4E6D-8ED4-659D4448D94F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6BB197B-E791-4DD8-8FB0-5CEC6C887179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BAF216-628E-4725-ADF7-2C9567050BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BAF216-628E-4725-ADF7-2C9567050BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BAF216-628E-4725-ADF7-2C9567050BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BAF216-628E-4725-ADF7-2C9567050BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7DA12F-4633-4B2C-B201-7CD4E86EA7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7DA12F-4633-4B2C-B201-7CD4E86EA7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7DA12F-4633-4B2C-B201-7CD4E86EA7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7DA12F-4633-4B2C-B201-7CD4E86EA7E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2F2576-E29F-4B93-8CFA-9438EADE26EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2F2576-E29F-4B93-8CFA-9438EADE26EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2F2576-E29F-4B93-8CFA-9438EADE26EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2F2576-E29F-4B93-8CFA-9438EADE26EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D94A37-8A63-478B-A5FA-E648FAFE801C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D94A37-8A63-478B-A5FA-E648FAFE801C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D94A37-8A63-478B-A5FA-E648FAFE801C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D94A37-8A63-478B-A5FA-E648FAFE801C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3C3A39-37FC-4E6D-8ED4-659D4448D94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3C3A39-37FC-4E6D-8ED4-659D4448D94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3C3A39-37FC-4E6D-8ED4-659D4448D94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3C3A39-37FC-4E6D-8ED4-659D4448D94F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

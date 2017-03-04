@@ -1,0 +1,36 @@
+﻿<Window x:Class="VideoClient.View.Device.CuriserAddPreset"
+        x:Name="cursierAddPresetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CuriserAddPreset" Height="300" Width="400"
+        DataContext="{DynamicResource ResourceKey=deviceViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="170" />
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <ScrollViewer Margin="20,10,20,0" Height="150" Grid.Row="0" Grid.Column="0" >
+            <DataGrid x:Name="curiserPreset" AutoGenerateColumns="True" Background="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="预置点" Binding="{Binding presetIndex}" Width="80" />
+                    <DataGridTextColumn Header="巡航速度" Binding="{Binding speed}" Width="80" />
+                    <DataGridTextColumn Header="停留时间(s)" Binding="{Binding remainTime}" Width="80" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="预置点: "/>
+            <ComboBox x:Name="preset" Loaded="PresetComboBox_Loaded"   VerticalAlignment="Top" Width="58" Height="25" />
+            <Label Content="巡航速度: "/>
+            <ComboBox x:Name="cursierSpeed" Loaded="CursierSpeedComboBox_Loaded"   VerticalAlignment="Top" Width="58" Height="25" />
+            <Label Content="停留时间(s): "/>
+            <TextBox Name="remainTime" Width="30" BorderBrush="Blue"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20,10,0,0" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Height="25" Click="ClearCuriserList" Content="清除所有巡航" />
+            <Button Height="25" Click="AddCuriserPreset" Content="添加巡航" Margin="10,0,0,0"/>
+            <Button Height="25" Command="{Binding CuriserAddPresetOKCommand}" CommandParameter="{Binding ElementName=cursierAddPresetWindow}" Content="确定"  Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

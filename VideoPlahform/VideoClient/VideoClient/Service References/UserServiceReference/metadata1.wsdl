@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://video.pandawork.net/user/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://video.pandawork.net/user/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://video.pandawork.net/user/Imports">
+      <xsd:import schemaLocation="http://video.net:9999/userService/metadata?xsd=xsd0" namespace="http://video.pandawork.net/user/" />
+      <xsd:import schemaLocation="http://video.net:9999/userService/metadata?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://video.net:9999/userService/metadata?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VideoCommon.com.pandawork.common.entity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserService_verifyUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:verifyUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_verifyUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verifyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_updateUserAndAcc_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserAndAcc" />
+  </wsdl:message>
+  <wsdl:message name="UserService_updateUserAndAcc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserAndAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_delUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_delUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_addUserAndAcc_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUserAndAcc" />
+  </wsdl:message>
+  <wsdl:message name="UserService_addUserAndAcc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserAndAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="verifyUser">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/verifyUser" message="tns:UserService_verifyUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/verifyUserResponse" message="tns:UserService_verifyUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserAndAcc">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/updateUserAndAcc" message="tns:UserService_updateUserAndAcc_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/updateUserAndAccResponse" message="tns:UserService_updateUserAndAcc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/updateUser" message="tns:UserService_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/updateUserResponse" message="tns:UserService_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delUser">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/delUser" message="tns:UserService_delUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/delUserResponse" message="tns:UserService_delUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/getAllUsers" message="tns:UserService_getAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/getAllUsersResponse" message="tns:UserService_getAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUserAndAcc">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/addUserAndAcc" message="tns:UserService_addUserAndAcc_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/addUserAndAccResponse" message="tns:UserService_addUserAndAcc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/user/UserService/addUser" message="tns:UserService_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/user/UserService/addUserResponse" message="tns:UserService_addUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

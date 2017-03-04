@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% include head.html %}
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-9 col-sm-9 col-xs-12 ">
+            {{ content }}
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-0  hidden-xs">
+            {% include header.html %}
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

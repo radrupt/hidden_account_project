@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF45">
+
+    <Style x:Key="TreeNodeStyle" TargetType="TreeViewItem">
+        <Setter Property="IsSelected"  Value="{Binding IsSelected, Mode=TwoWay}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="FontWeight" Value="Bold" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        
+    </Style>
+
+        <!--提示当前选中的节点-->
+  <DataTemplate x:Key="dtNodeInfo">
+    <WrapPanel>
+      <WrapPanel.Resources>
+        <Style TargetType="TextBlock">
+          <Setter Property="Margin" Value="5 0"></Setter>
+        </Style>
+      </WrapPanel.Resources>
+      <TextBlock Text="当前区域: " />
+          <TextBlock Text="{Binding SelectedNode.Name,FallbackValue=未选,Mode=TwoWay}" 
+                     Foreground="Red" />
+    </WrapPanel>
+  </DataTemplate>
+
+</ResourceDictionary>

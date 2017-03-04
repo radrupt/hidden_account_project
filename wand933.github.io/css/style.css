@@ -1,0 +1,23 @@
+/*
+ author: wangd933
+ email: 962889483@qq.com
+*/
+body {
+  padding-top: 50px;
+}
+a {
+
+}
+.header-left {
+  width: 100%;
+  height: 100%;
+}
+.container-post {
+  padding: 5px 20px 20px 20px;
+}
+.post-content {
+  padding-top: 20px;
+}
+.post-meta {
+  float: right;
+}

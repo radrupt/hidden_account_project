@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f110a540-dbda-4c7c-8e9d-60a39666fa91" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/userService/metadata?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="bca23bd8-739a-4ff5-b05c-6cf63532830a" SourceId="1" SourceUrl="http://video.net:9999/userService/metadata?wsdl" />
+    <MetadataFile FileName="metadata3.xsd" MetadataType="Schema" ID="d4aabe9c-c71d-42f7-ad5f-de0fdc48cd0b" SourceId="1" SourceUrl="http://video.net:9999/userService/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata31.xsd" MetadataType="Schema" ID="8583e070-25e2-4333-a6eb-8d702367a35e" SourceId="1" SourceUrl="http://video.net:9999/userService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="metadata32.xsd" MetadataType="Schema" ID="8f3da42e-f2af-4917-b27b-1d8c948923e2" SourceId="1" SourceUrl="http://video.net:9999/userService/metadata?xsd=xsd1" />
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="3bc23c0c-1e26-4d88-82d3-d6725c8b76b4" SourceId="1" SourceUrl="http://video.net:9999/userService/metadata?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

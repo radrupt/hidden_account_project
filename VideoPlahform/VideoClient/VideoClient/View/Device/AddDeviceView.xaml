@@ -1,0 +1,38 @@
+﻿<Window x:Class="VideoClient.View.Device.AddDeviceView"
+        x:Name="Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="添加设备"
+        DataContext="{DynamicResource ResourceKey=regionManageViewModel}"
+		Height="406.5" Width="426" AllowsTransparency="True" WindowStyle="None" OpacityMask="White" Background="Transparent" WindowStartupLocation="Manual" ResizeMode="NoResize">
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Effect>
+    		<DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.5" Color="#FF386A9E"/>
+    	</Grid.Effect>
+        <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Source="/VideoClient;component/Skin/img/dialog_title_bg.png" Stretch="Fill" MouseLeftButtonDown="Image_MouseLeftButtonDown" Width="{Binding ActualWidth, ElementName=addDeviceDialogGrid}"/>
+        <Image HorizontalAlignment="Left" Height="356.5" VerticalAlignment="Top" Source="/VideoClient;component/Skin/img/dialog_content_bg.png" Stretch="Fill" Margin="0,50,0,0" Width="{Binding ActualWidth, ElementName=addDeviceDialogGrid}"/>
+        <TextBlock Text="添加设备" Grid.Row="0" Style="{StaticResource dialogTitle}" Margin="36.333,11.213,304.333,561.693" Foreground="White" FontSize="21.333"/>
+        <Button x:Name="min" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Margin="364,7,0,0" FontFamily="/VideoClient;component/Fonts/#Candara" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="18.667" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Foreground="#FF144685" Template="{DynamicResource ButtonControlTemplate5}" Height="28" Click="min_Click"/>	
+        <Button x:Name="X" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Margin="392,10,0,0" FontFamily="/VideoClient;component/Fonts/#Candara" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="18.667" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Foreground="#FF144685" Template="{DynamicResource ButtonControlTemplateClose}" Height="28" Click="X_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="设 备 名" VerticalAlignment="Top" Margin="47,77,0,0" FontSize="18.667"/>
+        <TextBox x:Name="DeviceName" Height="27" Margin="150.551,77,57.449,0" TextWrapping="Wrap" Text="{Binding device.Name}"  VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="IP 地 址" VerticalAlignment="Top" Margin="47,128,0,0" FontSize="18.667"/>
+        <TextBox x:Name="DeviceIp" Height="27" Margin="150.551,128,57.449,0" TextWrapping="Wrap" Text="{Binding device.Ip}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="用 户 名" VerticalAlignment="Top" Margin="47,236.26,0,0" FontSize="18.667"/>
+        <TextBox x:Name="DeviceUserName" Height="27" Margin="150.551,0,57.449,143.24" TextWrapping="Wrap" Text="{Binding device.LoginName}" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="密      码" VerticalAlignment="Top" Margin="47,281.26,0,0" FontSize="18.667"/>
+        <TextBox x:Name="DeviceUserPass" Height="27" Margin="150.551,0,57.449,98.24" TextWrapping="Wrap" Text="{Binding device.Pwd}" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="命令端口" VerticalAlignment="Top" Margin="47,185.5,0,0" FontSize="18.667"/>
+        <TextBox x:Name="DeviceCmd" Height="27" Margin="150.551,0,57.449,194" TextWrapping="Wrap" Text="{Binding device.CmdPort}" VerticalAlignment="Bottom"/>
+		<Button Content="确定" Margin="47,344.25,289,35.25" Command="{Binding AddDeviceCommand}" CommandParameter="{Binding ElementName=Window}" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Template="{DynamicResource ButtonControlTemplate2}" Width="90" Height="27">
+			<Button.Effect>
+				<DropShadowEffect BlurRadius="2" ShadowDepth="2" Color="#FF5C8DBF" Opacity="0.5"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="取消" Margin="278.551,344.25,57.449,35.25" IsCancel="True" Click="CloseWindow" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Template="{DynamicResource ButtonControlTemplate3}" Width="90" Height="27">
+			<Button.Effect>
+				<DropShadowEffect BlurRadius="2" ShadowDepth="2" Color="#FF5C8DBF" Opacity="0.5"/>
+			</Button.Effect>
+		</Button>
+    </Grid>
+</Window>

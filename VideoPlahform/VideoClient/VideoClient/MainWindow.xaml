@@ -1,0 +1,70 @@
+﻿<dui:DazzleWindow x:Name="dazzleWindow" x:Class="VideoClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dui="clr-namespace:WPF.DazzleUI2.Controls;assembly=WPF.DazzleUI2"
+        Title="111" Height="600" Width="800" ResizeMode="NoResize">
+    <dui:DazzleWindow.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+    </dui:DazzleWindow.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="top" Grid.Row="0">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Skin/img/top_small.jpg"/>
+            </StackPanel.Background>
+            <StackPanel HorizontalAlignment="Right" Width="500" Height="100">
+                <StackPanel Height="26" Orientation="Horizontal" Margin="0,5,5,0" HorizontalAlignment="Right">
+                    <Image Source="skin/img/min.png" MouseDown="Image_MouseDown_2" Style="{DynamicResource ImageBtnStyle1}" />
+                    <Image Source="skin/img/max.png" MouseDown="Image_MouseDown_1" Style="{DynamicResource ImageBtnStyle1}" />
+                    <Image Source="skin/img/close.png" MouseDown="Image_MouseDown"   Style="{DynamicResource ImageBtnStyle1}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Right">
+                    <Image Width="50" Height="50" Source="Skin/img/logo.png" />
+                    <TextBlock Text="安防系统" FontSize="32" Margin="0,0,20,0" Foreground="#FFFBF8F8" FontFamily="LilyUPC" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <dui:DazzleTabControl Grid.Row="1" SelectedIndex="0" Margin="0,-70,0,0">
+            <dui:DazzleTabItem x:Name="AddDevice" Header="地图管理" Width="120">
+                <dui:DazzleTabItem.Background>
+                    <ImageBrush ImageSource="skin/img/map_ico.png"/>
+                </dui:DazzleTabItem.Background>
+                <dui:DazzleTabItem.MyMoverBrush >
+                    <ImageBrush ImageSource="skin/img/ico_on_bg.png" />
+                </dui:DazzleTabItem.MyMoverBrush>
+                <Grid x:Name="mapGrid" />
+            </dui:DazzleTabItem>
+            <dui:DazzleTabItem  x:Name="UploadML" Header="视频管理" Width="120" >
+                <dui:DazzleTabItem.Background>
+                    <ImageBrush ImageSource="skin/img/video_ico.png"/>
+                </dui:DazzleTabItem.Background>
+                <dui:DazzleTabItem.MyMoverBrush>
+                    <ImageBrush ImageSource="Skin/img/ico_on_bg.png"/>
+                </dui:DazzleTabItem.MyMoverBrush>
+                <Grid  x:Name="videoGrid"/>
+            </dui:DazzleTabItem>
+            <dui:DazzleTabItem x:Name="Recording" Header="设备管理" Width="120" >
+                <dui:DazzleTabItem.Background>
+                    <ImageBrush ImageSource="skin/img/device.png"/>
+                </dui:DazzleTabItem.Background>
+                <dui:DazzleTabItem.MyMoverBrush>
+                    <ImageBrush ImageSource="skin/img/ico_on_bg.png"/>
+                </dui:DazzleTabItem.MyMoverBrush>
+                <Grid  x:Name="deviceGrid"/>
+            </dui:DazzleTabItem>
+            <dui:DazzleTabItem x:Name="Binding" Header="视频组管理" Width="120" >
+                <dui:DazzleTabItem.Background>
+                    <ImageBrush ImageSource="skin/img/videos_ico.png"/>
+                </dui:DazzleTabItem.Background>
+                <dui:DazzleTabItem.MyMoverBrush>
+                    <ImageBrush ImageSource="skin/img/ico_on_bg.png"/>
+                </dui:DazzleTabItem.MyMoverBrush>
+                <Grid x:Name="groupGrid"/>
+            </dui:DazzleTabItem>
+        </dui:DazzleTabControl>
+    </Grid>
+</dui:DazzleWindow>
+

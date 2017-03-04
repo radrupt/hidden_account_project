@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://video.pandawork.net/map/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://video.pandawork.net/map/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://video.pandawork.net/map/Imports">
+      <xsd:import schemaLocation="http://125.222.219.238:9999/mapService/metadata?xsd=xsd0" namespace="http://video.pandawork.net/map/" />
+      <xsd:import schemaLocation="http://125.222.219.238:9999/mapService/metadata?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://125.222.219.238:9999/mapService/metadata?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VideoCommon.com.pandawork.common.dto" />
+      <xsd:import schemaLocation="http://125.222.219.238:9999/mapService/metadata?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VideoCommon.com.pandawork.common.entity" />
+      <xsd:import schemaLocation="http://125.222.219.238:9999/mapService/metadata?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MapService_getMapById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMapById" />
+  </wsdl:message>
+  <wsdl:message name="MapService_getMapById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMapByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_addMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMap" />
+  </wsdl:message>
+  <wsdl:message name="MapService_addMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_updateMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateMap" />
+  </wsdl:message>
+  <wsdl:message name="MapService_updateMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_delMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:delMap" />
+  </wsdl:message>
+  <wsdl:message name="MapService_delMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_getAllMaps_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMaps" />
+  </wsdl:message>
+  <wsdl:message name="MapService_getAllMaps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMapsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_findChildren_InputMessage">
+    <wsdl:part name="parameters" element="tns:findChildren" />
+  </wsdl:message>
+  <wsdl:message name="MapService_findChildren_OutputMessage">
+    <wsdl:part name="parameters" element="tns:findChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_createTreeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:createTreeById" />
+  </wsdl:message>
+  <wsdl:message name="MapService_createTreeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createTreeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapService_getAllMapImageNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMapImageNames" />
+  </wsdl:message>
+  <wsdl:message name="MapService_getAllMapImageNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMapImageNamesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MapService">
+    <wsdl:operation name="getMapById">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/getMapById" message="tns:MapService_getMapById_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/getMapByIdResponse" message="tns:MapService_getMapById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMap">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/addMap" message="tns:MapService_addMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/addMapResponse" message="tns:MapService_addMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMap">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/updateMap" message="tns:MapService_updateMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/updateMapResponse" message="tns:MapService_updateMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delMap">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/delMap" message="tns:MapService_delMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/delMapResponse" message="tns:MapService_delMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaps">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/getAllMaps" message="tns:MapService_getAllMaps_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/getAllMapsResponse" message="tns:MapService_getAllMaps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findChildren">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/findChildren" message="tns:MapService_findChildren_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/findChildrenResponse" message="tns:MapService_findChildren_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createTreeById">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/createTreeById" message="tns:MapService_createTreeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/createTreeByIdResponse" message="tns:MapService_createTreeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMapImageNames">
+      <wsdl:input wsaw:Action="http://video.pandawork.net/map/MapService/getAllMapImageNames" message="tns:MapService_getAllMapImageNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://video.pandawork.net/map/MapService/getAllMapImageNamesResponse" message="tns:MapService_getAllMapImageNames_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

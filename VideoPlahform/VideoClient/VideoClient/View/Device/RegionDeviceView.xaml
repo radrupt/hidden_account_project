@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="VideoClient.View.Device.RegionDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF45"
+             
+             mc:Ignorable="d" 
+             DataContext="{DynamicResource ResourceKey=regionManageViewModel}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../TreeResourceDictionary.xaml"/>
+    </UserControl.Resources>
+    <Grid x:Name="sdcf">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="35" />
+            <RowDefinition  />
+
+        </Grid.RowDefinitions>
+        
+        <DockPanel  Grid.Row="0" Grid.Column="0" LastChildFill="False">
+            <StackPanel Orientation="Horizontal" Margin="20,10,0,0"  DockPanel.Dock="Left">
+                <Button  x:Name="adddevicetoregion"     Height="25" Content="添加设备" 
+                         Click="AddDeviceButtonClick" />
+                <Button  x:Name="editdvicetoregion"     Height="25" Content="修改设备" Margin="10,0,0,0" 
+                         Command="{Binding EditDeviceCommand ,Source={StaticResource regionManageViewModel}}"/>
+                <Button  x:Name="deletedevicetoregion"  Height="25" Content="删除设备" Margin="10,0,0,0" 
+                         Command="{Binding DelDeviceCommand ,Source={StaticResource regionManageViewModel}}"/>
+            </StackPanel>
+
+            <HeaderedContentControl Content="{Binding SelectNodeInfo}" Margin="0,15,30,0" 
+									ContentTemplate="{StaticResource dtNodeInfo}"  DockPanel.Dock="Right" />
+                  
+                
+        </DockPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" HorizontalScrollBarVisibility="Visible" Margin="20,10,20,0">
+            <DataGrid x:Name="regiondevicelist" AutoGenerateColumns="false" Background="White"
+                      ItemsSource="{Binding DeviceList}" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="类型" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="名子" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="mac地址" Width="80" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="IP地址" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="子网掩码" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="网关地址" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="管理主机IP" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="管理主机端口" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="探测端口" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="命令端口" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="媒体端口" Width="80" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="通道数" Width="80" Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <StackPanel>
+           
+        </StackPanel>
+    </Grid>
+</UserControl>

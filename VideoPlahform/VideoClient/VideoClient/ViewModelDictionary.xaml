@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:VideoClient.ViewModel">
+    <vm:UserViewModel x:Key="userViewModel" />
+    <vm:MapViewModel x:Key="mapViewModel" />
+    <vm:RegionManageViewModel x:Key="regionManageViewModel"/>
+    <vm:DeviceViewModel x:Key="deviceViewModel"/>
+</ResourceDictionary>

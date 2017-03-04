@@ -1,0 +1,6 @@
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientUnit.dll
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientLib.dll
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientLib.pdb
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.csprojResolveAssemblyReference.cache
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.dll
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.pdb

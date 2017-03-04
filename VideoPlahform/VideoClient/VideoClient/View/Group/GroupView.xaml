@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="VideoClient.View.Group.GroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewdevice="clr-namespace:VideoClient.View.Device"
+
+             xmlns:group="clr-namespace:VideoClient.View.Group">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <group:PlayerGroupView Grid.Column="0" Grid.RowSpan="2"     />
+        <viewdevice:RightOpControl   Grid.Column="1" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>

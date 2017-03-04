@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="284d52be-d222-4a47-afac-c0d700f7096f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/regionService/metadata?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="f81f5d5d-80a6-4324-9710-802af2b9ead9" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?wsdl=wsdl0" />
+    <MetadataFile FileName="RegionService1.wsdl" MetadataType="Wsdl" ID="5a3de037-3289-47a6-8747-a2b26d1c44d3" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?wsdl" />
+    <MetadataFile FileName="metadata4.xsd" MetadataType="Schema" ID="0567ad1b-0007-47e8-aa30-69c56f35c966" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="metadata41.xsd" MetadataType="Schema" ID="d82662bc-56f5-496f-8b6c-bfea66dea3d9" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?xsd=xsd3" />
+    <MetadataFile FileName="metadata42.xsd" MetadataType="Schema" ID="9bf4f51e-549d-4654-916b-243925f33153" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata43.xsd" MetadataType="Schema" ID="2b2f2878-d89c-450b-836e-18087e5de8f4" SourceId="1" SourceUrl="http://video.net:9999/regionService/metadata?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

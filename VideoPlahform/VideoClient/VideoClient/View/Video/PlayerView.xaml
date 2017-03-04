@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="VideoClient.View.Video.PlayerView"
+             x:Name="userControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:host="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             DataContext="{DynamicResource ResourceKey=deviceViewModel}"
+             >
+    <Grid  >
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="94*"/>
+    		<RowDefinition Height="6*"/>
+    	</Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+           
+            <host:WindowsFormsHost  x:Name="windowsformshost">
+                <wf:Panel x:Name="video"  />
+            </host:WindowsFormsHost>
+   
+        </Grid>
+        
+    	<Grid Grid.Row="1" RenderTransformOrigin="10.3,3.091">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="播放" Width="50" Command="{Binding StreamPlayCommand}" CommandParameter="{Binding ElementName=userControl}" />
+                <Button Content="暂停"  Width="50" Command="{Binding StreamPauseCommand}"  />
+                <Button Content="恢复"  Width="50" Command="{Binding StreamResumeCommand}"  />
+                <Button Content="停止"  Width="50" Command="{Binding StreamStopCommand}"  />
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</UserControl>

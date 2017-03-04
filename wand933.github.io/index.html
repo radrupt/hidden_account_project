@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="home">
+
+    <!--<h1 class="page-heading">文章</h1>-->
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <h3>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration: none ">{{ post.title }}</a>
+            <!--<span class="post-meta" style="font-size: 70% ">{{ post.date | date: "%Y-%m-%d" }}</span>-->
+        </h3>
+        {% endfor %}
+    </ul>
+</div>

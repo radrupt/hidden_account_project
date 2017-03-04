@@ -1,0 +1,10 @@
+D:\project\camera\C#monitoring\Hie_MP4Player\obj\Debug\Hie_MP4Player.csprojResolveAssemblyReference.cache
+D:\project\camera\C#monitoring\Hie_MP4Player\bin\Debug\Hie_MP4Player.dll
+D:\project\camera\C#monitoring\Hie_MP4Player\bin\Debug\Hie_MP4Player.pdb
+D:\project\camera\C#monitoring\Hie_MP4Player\obj\Debug\Hie_MP4Player.dll
+D:\project\camera\C#monitoring\Hie_MP4Player\obj\Debug\Hie_MP4Player.pdb
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\Hie_MP4Player\bin\Debug\Hie_MP4Player.dll
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\Hie_MP4Player\bin\Debug\Hie_MP4Player.pdb
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\Hie_MP4Player\obj\Debug\Hie_MP4Player.csprojResolveAssemblyReference.cache
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\Hie_MP4Player\obj\Debug\Hie_MP4Player.dll
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\Hie_MP4Player\obj\Debug\Hie_MP4Player.pdb

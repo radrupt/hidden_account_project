@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="VideoClient.View.Group.PlayerGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:video="clr-namespace:VideoClient.View.Video"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<UserControl.Resources>
+		<ControlTemplate x:Key="PlayerCountButtonControlTemplate" TargetType="{x:Type Button}">
+			<Grid>
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="MouseOver">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Pressed"/>
+						<VisualState x:Name="Disabled"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Image HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20" Source="/VideoClient;component/Skin/img/playerCount/oneCount.png"/>
+				<Image x:Name="image" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20" Source="/VideoClient;component/Skin/img/playerCount/oneSelected.png"/>
+			</Grid>
+		</ControlTemplate>
+		<ControlTemplate x:Key="CheckBoxControlTemplate1" TargetType="{x:Type CheckBox}">
+			<Grid Width="20">
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CheckStates">
+						<VisualState x:Name="Checked"/>
+						<VisualState x:Name="Unchecked">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Indeterminate"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Image HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/oneCount.png"/>
+				<Image x:Name="image" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/oneSelected.png"/>
+			</Grid>
+		</ControlTemplate>
+		<ControlTemplate x:Key="CheckBoxControlTemplate2" TargetType="{x:Type CheckBox}">
+			<Grid Width="20">
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CheckStates">
+						<VisualState x:Name="Checked"/>
+						<VisualState x:Name="Unchecked">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Indeterminate"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Image HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/fourCount.png"/>
+				<Image x:Name="image" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/fourSelected.png"/>
+			</Grid>
+		</ControlTemplate>
+		<ControlTemplate x:Key="CheckBoxControlTemplate3" TargetType="{x:Type CheckBox}">
+			<Grid Width="20">
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CheckStates">
+						<VisualState x:Name="Checked"/>
+						<VisualState x:Name="Unchecked">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+									<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Indeterminate"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Image HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/nineCount.png"/>
+				<Image x:Name="image" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Source="/VideoClient;component/Skin/img/playerCount/nineSelected.png"/>
+			</Grid>
+		</ControlTemplate>
+	</UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+            
+        <Grid>
+        	<StackPanel HorizontalAlignment="Left" Margin="10,0,0,0" Orientation="Horizontal" Width="134.667">
+        		<CheckBox x:Name="oneCheckBox" Content="CheckBox" Checked="oneCheckBox_Checked"  Template="{DynamicResource CheckBoxControlTemplate1}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="8,0,0,0"/>
+        		<CheckBox x:Name="fourCheckBox" Content="CheckBox" Checked="fourCheckBox_Checked"  Template="{DynamicResource CheckBoxControlTemplate2}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="8,0,0,0"/>
+        		<CheckBox x:Name="nineCheckBox" Content="CheckBox" Checked="nineCheckBox_Checked" Template="{DynamicResource CheckBoxControlTemplate3}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="8,0,0,0"/>
+        	</StackPanel>
+        </Grid>
+        <WrapPanel x:Name="playerContionter" Grid.Row="1" Loaded="playerContionter_Loaded" SizeChanged="playerContionter_SizeChanged"/>
+    </Grid>
+</UserControl>

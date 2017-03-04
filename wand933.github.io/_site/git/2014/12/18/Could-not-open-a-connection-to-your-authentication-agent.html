@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Could not open a connection to your authentication agent</title>
+    <meta name="description" content="way 1:">
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--<link rel="stylesheet/less" href="/less/styles.less">-->
+    <!--<script src="/js/less.js" type="text/javascript"></script>-->
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-9 col-sm-9 col-xs-12 ">
+            <div class="container-post">
+
+    <div class="post-header">
+        <h1 class="post-title">Could not open a connection to your authentication agent</h1>
+        <div class="post-meta">
+            <p>2014-12-18 • wangd933 • git</p>
+        </div>
+    </div>
+
+    <article class="post-content">
+        <p><code>way 1:</code></p>
+
+<blockquote>
+  <ol>
+    <li>ssh-agent</li>
+    <li>eval ‘ssh-agent -s’</li>
+    <li>ssh-add ‘your id_rsa’</li>
+  </ol>
+</blockquote>
+
+<p><code>way 2:</code></p>
+
+<blockquote>
+  <ol>
+    <li>ssh-agent</li>
+    <li>eval $(ssh-agent)</li>
+    <li>ssh-add ‘your id_rsa`</li>
+  </ol>
+</blockquote>
+
+<p><code>reference:</code></p>
+
+<blockquote>
+  <p>1.<a href="http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">could-not-open-a-connection-to-your-authentication-agent</a><br />2.<a href="http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">fix-could-not-open-a-connection-to-your-authentication-agent-when-using-ssh-add</a></p>
+</blockquote>
+
+
+    </article>
+</div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-0  hidden-xs">
+            <header>
+    <div class="header-left affix">
+        <h1><a href="http://127.0.0.1:4000/" style="text-decoration: none ">飞行家</a></h1>
+    </div>
+</header>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

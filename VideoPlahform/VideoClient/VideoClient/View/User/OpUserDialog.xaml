@@ -1,0 +1,41 @@
+﻿<Window x:Class="VideoClient.View.User.OpUserDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OpUserDialog" 
+		Height="406.5" Width="352" AllowsTransparency="True" WindowStyle="None" OpacityMask="White" Background="Transparent" WindowStartupLocation="Manual" ResizeMode="NoResize">
+    <Grid>
+    	<Grid.Effect>
+    		<DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.5" Color="#FF386A9E"/>
+    	</Grid.Effect>
+        <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Source="/VideoClient;component/Skin/img/dialog_title_bg.png" Stretch="Fill" MouseLeftButtonDown="Image_MouseLeftButtonDown" Width="352"/>
+        <Image HorizontalAlignment="Left" Height="356.5" VerticalAlignment="Top" Source="/VideoClient;component/Skin/img/dialog_content_bg.png" Stretch="Fill" Margin="0,50,0,0" Width="352"/>
+        <Button x:Name="min" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Margin="291,7,0,0" FontFamily="/VideoClient;component/Fonts/#Candara" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="18.667" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Foreground="#FF144685" Template="{DynamicResource ButtonControlTemplate5}" Height="28" Click="min_Click"/>
+        <Button x:Name="X" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Margin="319,10,0,0" FontFamily="/VideoClient;component/Fonts/#Candara" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" FontSize="18.667" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" Foreground="#FF144685" Template="{DynamicResource ButtonControlTemplateClose}" Height="28" Click="X_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="用  户 名" VerticalAlignment="Top" Margin="52.004,78.962,0,0" FontSize="18.667" Width="72.863"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="密      码" VerticalAlignment="Top" Margin="52.004,124.909,0,0" FontSize="18.667" Width="70.758"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="确认密码" VerticalAlignment="Top" Margin="52.004,170,0,0" FontSize="18.667" Width="74.968"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="姓      名" VerticalAlignment="Top" Margin="52.004,214,0,0" FontSize="18.667" Width="70.758"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="电      话" VerticalAlignment="Top" Margin="51,256,0,0" FontSize="18.667" Width="70.758"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="角      色" VerticalAlignment="Top" Margin="52.004,298,0,0" FontSize="18.667" Width="70.758"/>
+        <TextBox x:Name="userNameTB" HorizontalAlignment="Left" Height="27" Margin="153.715,78.962,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146.285"/>
+        <TextBox x:Name="realNameTB" HorizontalAlignment="Left" Height="27" Margin="153.715,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146.285"/>
+        <PasswordBox x:Name="password1PB" HorizontalAlignment="Left" Margin="153.715,124.909,0,0" VerticalAlignment="Top" Width="146.285" Height="27"/>
+        <PasswordBox x:Name="password2PB" HorizontalAlignment="Left" Margin="153.715,170,0,0" VerticalAlignment="Top" Width="146.285" Height="27"/>
+        <ComboBox x:Name="RoleCB" Template="{DynamicResource ComboBoxControlTemplate1}" Style="{DynamicResource dialogComboBox}" HorizontalAlignment="Left" Margin="153.715,298,0,0" VerticalAlignment="Top" Width="146.285" Height="27">
+            <ComboBoxItem Content="管理员" Height="100" Width="100"/>
+            <ComboBoxItem Content="一般用户" Height="100" Width="100" IsSelected="True"/>
+        </ComboBox>
+        <TextBox x:Name="phoneTB" HorizontalAlignment="Left" Height="27" Margin="153.715,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146.285"/>
+        <Button Content="确定" Margin="46,344.25,216,35.25" Command="{Binding AddDeviceCommand}" CommandParameter="{Binding ElementName=Window}" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Template="{DynamicResource ButtonControlTemplate2}" Width="90" Height="27" Click="Button_Click">
+        	<Button.Effect>
+        		<DropShadowEffect BlurRadius="2" ShadowDepth="2" Color="#FF5C8DBF" Opacity="0.5"/>
+        	</Button.Effect>
+        </Button>
+        <Button Content="取消" Margin="212.551,344.25,49.449,35.25" IsCancel="True" Click="CloseWindow" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Template="{DynamicResource ButtonControlTemplate3}" Width="90" Height="27">
+        	<Button.Effect>
+        		<DropShadowEffect BlurRadius="2" ShadowDepth="2" Color="#FF5C8DBF" Opacity="0.5"/>
+        	</Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="VideoClient.View.Device.RegionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewdevice="clr-namespace:VideoClient.View.Device"
+       >  
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <viewdevice:RegionDeviceView Grid.Column="0" Grid.Row="0"     />
+        <viewdevice:ProbeDeviceView  Grid.Column="0" Grid.Row="1"     />
+        <viewdevice:RightOpControl   Grid.Column="1" Grid.RowSpan="2" />       
+    </Grid>
+</UserControl>

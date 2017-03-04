@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6aab47c5-abc1-444c-a99c-a3e6c69c4f64" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://video.net:9999/upLoadService/metadata" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="metadata4.xsd" MetadataType="Schema" ID="6e296a98-c6bc-4c7d-9ec6-996c83eaaffa" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata?xsd=xsd0" />
+    <MetadataFile FileName="metadata41.xsd" MetadataType="Schema" ID="b38af1af-31f0-4e8f-bab9-1867835384e6" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata?xsd=xsd1" />
+    <MetadataFile FileName="metadata42.xsd" MetadataType="Schema" ID="90828fcd-46b6-445e-aa62-4ba3f8343a01" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata?xsd=xsd2" />
+    <MetadataFile FileName="metadata43.xsd" MetadataType="Schema" ID="d15a3d89-e67b-4ba3-83c1-0806ba9625e0" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata?xsd=xsd3" />
+    <MetadataFile FileName="metadata1.wsdl" MetadataType="Wsdl" ID="e08c5a3c-b58e-48dc-ba41-7d443ff7701a" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata?wsdl=wsdl0" />
+    <MetadataFile FileName="UpLoadService1.wsdl" MetadataType="Wsdl" ID="76a1ed8c-0b30-4fc9-b2da-0d68e2b149eb" SourceId="1" SourceUrl="http://video.net:9999/upLoadService/metadata" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

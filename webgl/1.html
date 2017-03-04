@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+body {
+		background-image:-webkit-canvas(calendar);
+	} 
+</style>
+<body>
+	<script src="maple.js"></script>
+	<script>
+	
+	var isWebkit = /(webkit)[ \/]([\w.]+)/ig.test(navigator.userAgent);
+	var devicePixelRatio = window.devicePixelRatio || 1;
+	
+	function getContext() {
+		var context;
+		if(isWebkit && document.getCSSCanvasContext) {
+			context = document.getCSSCanvasContext("2d", "calendar", getWinWidth() * devicePixelRatio, getWinHeight() * devicePixelRatio);
+			
+		} else {
+			return false;
+		}
+		return context;
+	};
+
+	(function() {
+		var imgUrl = 'qq.png';
+		
+		if(devicePixelRatio == 2) {
+			imgUrl = 'qq.png';
+		}
+
+		var img = new Image();
+
+		img.onload = function() {
+			//get canvas context
+
+			var context = getContext();
+			
+			if(!context) {
+				alert('请使用webkit内核浏览器！');
+				return;
+			}
+			//draw icon
+			
+			findDimensions(context); 
+			
+			//调用函数，获取数值 
+			window.onresize=findDimensions; 
+		}
+
+		img.src = imgUrl;
+	})();
+	</script>
+</body>
+</html>

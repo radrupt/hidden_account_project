@@ -1,0 +1,12 @@
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientUnit.dll
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientLib.dll
+D:\project\camera\C#monitoring\HieClientLib\bin\Debug\HieClientLib.pdb
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.csprojResolveAssemblyReference.cache
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.dll
+D:\project\camera\C#monitoring\HieClientLib\obj\Debug\HieClientLib.pdb
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\bin\Debug\HieClientUnit.dll
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\bin\Debug\HieClientLib.dll
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\bin\Debug\HieClientLib.pdb
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\obj\Debug\HieClientLib.csprojResolveAssemblyReference.cache
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\obj\Debug\HieClientLib.dll
+C:\Users\wangd933\Desktop\VideoPlahform\VideoClient\HieClientLib\obj\Debug\HieClientLib.pdb
